@@ -10,10 +10,10 @@ Download the latest sdk version from our server:
 
 # Implementation Guide
 
-* [Common](https://github.com/Game-of-whales/GOW-SDK-IOS/edit/master/README.md#common)
-* [For SWIFT](https://github.com/Game-of-whales/GOW-SDK-IOS/edit/master/README.md#swift)
-* [For Objective-c](https://github.com/Game-of-whales/GOW-SDK-IOS/edit/master/README.md#objective-c)
-* [FAQ](https://https://github.com/Game-of-whales/GOW-SDK-IOS/edit/master/README.md#faq)
+* [Common](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#common)
+* [For SWIFT](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#swift)
+* [For Objective-c](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#objective-c)
+* [FAQ](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#faq)
 
 
 ## Common
