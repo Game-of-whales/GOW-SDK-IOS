@@ -257,7 +257,7 @@ You can get _pushID_ like this:
 ```
 
 
-> You can find an example of using the SDK [here]().
+> You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
 
 Run your app. The information about it began to be collected and displayed on the [dashboard](http://gameofwhales.com/#/documentation/dashboard). In a few days, you will get data for analyzing.
 
