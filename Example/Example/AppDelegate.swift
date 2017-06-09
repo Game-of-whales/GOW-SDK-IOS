@@ -132,8 +132,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil);
             alert.addAction(ok)
             controller.present(alert, animated: true, completion: {
-                GWManager.shared().pushReacted(pushID);
+                if (pushID != nil)
+                {
+                    GWManager.shared().pushReacted(pushID!);
+                }
+                
             })
+
         }
 
     }
