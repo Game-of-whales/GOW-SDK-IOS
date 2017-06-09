@@ -12,15 +12,14 @@ Download the latest sdk version from our server:
 
 * [Common](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#common)
 * [For SWIFT](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#swift)
-* [For Objective-c](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#objective-c)
-* [FAQ](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#faq)
+* [For Objective-С](https://github.com/Game-of-whales/GOW-SDK-IOS/blob/master/README.md#objective-c)
 
 
 ## Common
 
 ### Step 1
 
-Add ```gow.framework``` to ```Embedded Binaries``` XCODE section of your project. 
+Add ```GameOfWhales.framework``` to ```Linked Frameworks and Libraries``` XCODE section of your project. 
 
 <img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/add_framework.png>
 
@@ -35,7 +34,7 @@ Add ```GWGameKey``` parameter to ```info.plist``` and specify your [game key](ht
 ## SWIFT
 
 ### Step 3
-Call a method ```launchWithOptions``` when you launch your app.
+Call a method ```launch``` when you launch your app.
 
 ```swift
 import gow
@@ -51,7 +50,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Step 4
 
-If you want to use [special offers](http://www.gameofwhales.com/#/documentation/so), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```GWManager.shared().add``` method.
+If you want to use [special offers](http://www.gameofwhales.com/#/documentation/so), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
 
 ```swift
 class ViewController: UIViewController, GWManagerDelegate
@@ -154,7 +153,7 @@ func application(_ application: UIApplication,
 Call a method ```launchWithOptions``` when you launch your app.
 
 ```objective-c
-#import "gow/gow.h"
+#import <GameOfWhales/GameOfWhales.h>
 ...
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ...
@@ -260,54 +259,6 @@ You can get _pushID_ like this:
 
 > You can find an example of using the SDK [here]().
 
-
 Run your app. The information about it began to be collected and displayed on the [dashboard](http://gameofwhales.com/#/documentation/dashboard). In a few days, you will get data for analyzing.
 
 This article includes the documentation for _Game of Whales iOS Native SDK_. You can find information about other SDKs in [documentation about Game of Whales](http://www.gameofwhales.com/#/documentation).
-
-
-# FAQ
-### How to exclude _i386_, _x86_64_ from your project?
-
-In order to exclude _i386_, _x86_64_ from your project when you are building project in *AppStore*, add the following script:
-
-```bash
-
-echo "Target architectures: $ARCHS"
-
-APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
-
-find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
-do
-FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
-FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
-echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
-echo $(lipo -info $FRAMEWORK_EXECUTABLE_PATH)
-
-FRAMEWORK_TMP_PATH="$FRAMEWORK_EXECUTABLE_PATH-tmp"
-
-# remove simulator's archs if location is not simulator's directory
-case "${TARGET_BUILD_DIR}" in
-*"iphonesimulator")
-echo "No need to remove archs"
-;;
-*)
-if $(lipo $FRAMEWORK_EXECUTABLE_PATH -verify_arch "i386") ; then
-lipo -output $FRAMEWORK_TMP_PATH -remove "i386" $FRAMEWORK_EXECUTABLE_PATH
-echo "i386 architecture removed"
-rm $FRAMEWORK_EXECUTABLE_PATH
-mv $FRAMEWORK_TMP_PATH $FRAMEWORK_EXECUTABLE_PATH
-fi
-if $(lipo $FRAMEWORK_EXECUTABLE_PATH -verify_arch "x86_64") ; then
-lipo -output $FRAMEWORK_TMP_PATH -remove "x86_64" $FRAMEWORK_EXECUTABLE_PATH
-echo "x86_64 architecture removed"
-rm $FRAMEWORK_EXECUTABLE_PATH
-mv $FRAMEWORK_TMP_PATH $FRAMEWORK_EXECUTABLE_PATH
-fi
-;;
-esac
-
-done
-``` 
-
-<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/remove_arch.png>
