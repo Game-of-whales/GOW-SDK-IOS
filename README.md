@@ -37,7 +37,7 @@ Add ```GWGameKey``` parameter to ```info.plist``` and specify your [game key](ht
 Call a method ```launch``` when you launch your app.
 
 ```swift
-import gow
+import GameOfWhales
 ...
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
