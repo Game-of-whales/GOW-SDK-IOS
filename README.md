@@ -4,7 +4,7 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>]()
+[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v1.0.0.zip)
 
  
 
