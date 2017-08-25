@@ -53,7 +53,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### Step 4
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/so), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
 
 ```swift
 class ViewController: UIViewController, GWDelegate     
@@ -181,7 +181,7 @@ Call a method ```launchWithOptions``` when you launch your app.
 
 ### Step 4
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/so), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```addDelegate``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```addDelegate``` method.
 
 ```objective-c
 @interface ViewController : UIViewController<GWManagerDelegate>
@@ -256,7 +256,7 @@ A special offer can also influence count (count of coins, for example) which a p
 
 ### Step 7
 
-In order to [notifications](http://www.gameofwhales.com/documentation/push) sending by server  it's necessary to send information about token to it. 
+In order to [notifications](http://www.gameofwhales.com/documentation/push-notifications) sending by server  it's necessary to send information about token to it. 
 
 ```objective-c
  - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
