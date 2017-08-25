@@ -12,7 +12,8 @@
 #import "GWManagerDelegate.h"
 
 #define GW_VERSION @"1.0.0"
-
+#define GW_APN @"apn"
+#define GW_FCM @"fcm"
 /*!
  @brief Entry point for Game of whales SDK
  */
@@ -77,6 +78,12 @@
      */
     - (void)receivedRemoteNotification: (nonnull NSDictionary *)notification withApplication:(UIApplication *_Nonnull)application fetchCompletionHandler:(void (^ _Nullable)(UIBackgroundFetchResult result))handler;
 
+
+    -(void) setStringParameter:(NSString * _Nonnull) key withValue:(NSString* _Nonnull) value;
+    -(void) setIntParameter:(NSString * _Nonnull) key withValue:(int) value;
+    -(void) setBoolParameter:(NSString * _Nonnull) key withValue:(BOOL) value;
+
+
      /*
      @brief send information that user reacted to push
      */
@@ -94,7 +101,7 @@
      */
     - (BOOL)inSegment:(nonnull NSString *)segmentName;
 
-    - (void)updateDeviceToken:(nullable NSString *)deviceToken;
+    - (void)updateDeviceToken:(nullable NSString *)deviceToken type:(NSString*)type;
 
-    - (void)updateDeviceTokenForNSData:(nullable NSData*)deviceToken;
+    - (void)updateDeviceTokenForNSData:(nullable NSData*)deviceToken type:(NSString*)type;
 @end

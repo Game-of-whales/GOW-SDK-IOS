@@ -9,31 +9,25 @@
 import UIKit
 import StoreKit
 import GameOfWhales
-import UserNotifications;
 import Firebase
+import UserNotifications;
 
 extension Notification.Name {
     static let FIRRemoteMessageReceived = Notification.Name("FIRRemoteMessageReceived")
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
-    /// This method will be called whenever FCM receives a new, default FCM token for your
-    /// Firebase project's Sender ID.
-    /// You can send this token to your application server to send notifications to this device.
-    
+class AppDelegate: MessagingRemoteMessage, UIApplicationDelegate  {
 
-    func purchasedReplacement(_ replacement: GWReplacement, transaction: SKPaymentTransaction) {
-        NSLog("GOW.Example: App delegate - %@  purchased", replacement);
-    }
-    
     var window: UIWindow?
-    
-    
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        NSLog("GOW.Example: didFinishLaunchingWithOptions %@", launchOptions.debugDescription);
+        NSLog("GOW.Example: didFinishLaunchingWithOptions %@", launchOptions ?? "");
         
-        
+        GW.initialize(withGameKey: "585026b7f365603dd4e70d4d", launchOptions, true);
+        //GW.initialize(launchOptions, true);
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound])
         { (granted, error) in
             if granted == true{
@@ -45,33 +39,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             }
         }
         
-        GWManager.setDebug(true)
-        GWManager.shared().launch(options: launchOptions)
         
         NSLog("GOW.Example: transactions count = %@", SKPaymentQueue.default().transactions.count);
         
         SKPaymentQueue.default().restoreCompletedTransactions();
+
+        /*FIRMessaging.messaging().remoteMessageDelegate = self
         
-        Messaging.messaging().delegate = self
+        FIRApp.configure()
         
-        FirebaseApp.configure()
-        
-        firConnect()
-        
+        firConnect()*/
+
         return true
     }
     
-    func application(received remoteMessage: MessagingRemoteMessage){
+    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage){
         let n = Notification(name: .FIRRemoteMessageReceived, object: remoteMessage.appData);
         NotificationCenter.default.post(n);
     }
-    
-    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-        GWManager.shared().updateDeviceToken(fcmToken);
-    }
-    
+
     func firConnect() {
-        let token = InstanceID.instanceID().token();
+        /*let token = FIRInstanceID.instanceID().token();
         
         if (token == nil)
         {
@@ -79,9 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             return;
         }
         
-        Messaging.messaging().disconnect();
+        FIRMessaging.messaging().disconnect();
         
-        Messaging.messaging().connect { (error:Error?) in
+        FIRMessaging.messaging().connect { (error:Error?) in
             if ((error) != nil) {
                 print("GOW.Example: Unable to connect to FCM.", error ?? "")
             } else {
@@ -89,58 +77,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             }
         };
         
-        GWManager.shared().updateDeviceToken(token);
+        GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);*/
     }
     
-    
+        
     func applicationWillResignActive(_ application: UIApplication) {
     }
-    
+
     func applicationDidEnterBackground(_ application: UIApplication) {
         Messaging.messaging().disconnect();
     }
-    
+
     func applicationWillEnterForeground(_ application: UIApplication) {
     }
-    
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         firConnect();
     }
     
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("GOW.Example: token", deviceTokenString)
+        
+        GW.shared().registerDeviceToken(with: deviceTokenString, provider: GW_PROVIDER_APN)
+    }
     func applicationWillTerminate(_ application: UIApplication) {
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error){
         print("GOW.Example: didFailToRegisterForRemoteNotificationsWithError ", error);
     }
-    
+
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
         print("GOW.Example: didReceiveRemoteNotification ");
         
-        let controller = self.window?.rootViewController as! ViewController
-        controller.OnRemoteNotificationReceived(notification: userInfo)
+        /*let controller = self.window?.rootViewController as! ViewController
+        controller.OnRemoteNotificationReceived(notification: userInfo)*/
+
+        GW.shared().receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
         
-        GWManager.shared().receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
-        
-        if (application.applicationState == UIApplicationState.active)
+       /* if (application.applicationState == UIApplicationState.active)
         {
-            let pushID = GWManager.shared().getPushID(userInfo);
-            
             let alert = UIAlertController(title: "Notification", message: "", preferredStyle: UIAlertControllerStyle.alert);
             let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil);
             alert.addAction(ok)
             controller.present(alert, animated: true, completion: {
-                if (pushID != nil)
-                {
-                    GWManager.shared().pushReacted(pushID!);
-                }
-                
+                GW.shared().reactedRemoteNotification(userInfo);
             })
-
-        }
-
+        }*/
+                
     }
     
     

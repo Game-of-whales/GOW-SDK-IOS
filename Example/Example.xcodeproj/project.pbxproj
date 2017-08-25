@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		921377541EE58390007DED03 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921377531EE58390007DED03 /* StoreKit.framework */; };
 		926416CE1EE9971F00EBB0B1 /* GameOfWhales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926416CD1EE9971F00EBB0B1 /* GameOfWhales.framework */; };
-		92DCEA901EE18E04004EC8EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCEA8F1EE18E04004EC8EC /* AppDelegate.swift */; };
-		92DCEA921EE18E04004EC8EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCEA911EE18E04004EC8EC /* ViewController.swift */; };
+		929813C21F38865000C80F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929813BC1F38865000C80F40 /* AppDelegate.swift */; };
+		929813C31F38865000C80F40 /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929813BD1F38865000C80F40 /* BankView.swift */; };
+		929813C41F38865000C80F40 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929813BE1F38865000C80F40 /* MainView.swift */; };
+		929813C51F38865000C80F40 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929813BF1F38865000C80F40 /* PlayerInfo.swift */; };
+		929813C61F38865000C80F40 /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929813C01F38865000C80F40 /* PlayerInfoView.swift */; };
 		92DCEA951EE18E04004EC8EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DCEA931EE18E04004EC8EC /* Main.storyboard */; };
 		92DCEA971EE18E04004EC8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DCEA961EE18E04004EC8EC /* Assets.xcassets */; };
 		92DCEA9A1EE18E04004EC8EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DCEA981EE18E04004EC8EC /* LaunchScreen.storyboard */; };
@@ -36,9 +39,13 @@
 		921377521EE5838D007DED03 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		921377531EE58390007DED03 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		926416CD1EE9971F00EBB0B1 /* GameOfWhales.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GameOfWhales.framework; sourceTree = "<group>"; };
+		929813BB1F38864F00C80F40 /* Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		929813BC1F38865000C80F40 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		929813BD1F38865000C80F40 /* BankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
+		929813BE1F38865000C80F40 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		929813BF1F38865000C80F40 /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		929813C01F38865000C80F40 /* PlayerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
 		92DCEA8C1EE18E04004EC8EC /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		92DCEA8F1EE18E04004EC8EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92DCEA911EE18E04004EC8EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92DCEA941EE18E04004EC8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92DCEA961EE18E04004EC8EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92DCEA991EE18E04004EC8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,13 +103,17 @@
 		92DCEA8E1EE18E04004EC8EC /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				929813BC1F38865000C80F40 /* AppDelegate.swift */,
+				929813BD1F38865000C80F40 /* BankView.swift */,
+				929813BE1F38865000C80F40 /* MainView.swift */,
+				929813BF1F38865000C80F40 /* PlayerInfo.swift */,
+				929813C01F38865000C80F40 /* PlayerInfoView.swift */,
 				921377521EE5838D007DED03 /* Example.entitlements */,
-				92DCEA8F1EE18E04004EC8EC /* AppDelegate.swift */,
-				92DCEA911EE18E04004EC8EC /* ViewController.swift */,
 				92DCEA931EE18E04004EC8EC /* Main.storyboard */,
 				92DCEA961EE18E04004EC8EC /* Assets.xcassets */,
 				92DCEA981EE18E04004EC8EC /* LaunchScreen.storyboard */,
 				92DCEA9B1EE18E04004EC8EC /* Info.plist */,
+				929813BB1F38864F00C80F40 /* Example-Bridging-Header.h */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -154,7 +165,8 @@
 					92DCEA8B1EE18E04004EC8EC = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 2CF9M4J7ZH;
-						ProvisioningStyle = Manual;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -255,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92DCEA921EE18E04004EC8EC /* ViewController.swift in Sources */,
-				92DCEA901EE18E04004EC8EC /* AppDelegate.swift in Sources */,
+				929813C51F38865000C80F40 /* PlayerInfo.swift in Sources */,
+				929813C31F38865000C80F40 /* BankView.swift in Sources */,
+				929813C61F38865000C80F40 /* PlayerInfoView.swift in Sources */,
+				929813C41F38865000C80F40 /* MainView.swift in Sources */,
+				929813C21F38865000C80F40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +397,7 @@
 			baseConfigurationReference = EBA4147C00148933289F4735 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -395,8 +411,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b0c230a1-0359-460a-86b8-0ab2005aa64c";
-				PROVISIONING_PROFILE_SPECIFIER = "GOW Native Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -406,6 +424,7 @@
 			baseConfigurationReference = C4AA4AA89420AE1D138E44F3 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -419,8 +438,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b0c230a1-0359-460a-86b8-0ab2005aa64c";
-				PROVISIONING_PROFILE_SPECIFIER = "GOW Native Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

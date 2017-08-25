@@ -14,6 +14,7 @@ FOUNDATION_EXPORT double gowVersionNumber;
 //! Project version string for GameOfWhales.
 FOUNDATION_EXPORT const unsigned char gowVersionString[];
 
-#import "GWManagerDelegate.h"
-#import "GWManager.h"
-#import "GWReplacement.h"
+
+#import "GW.h"
+#import "GWSpecialOffer.h"
+#import "GWDelegate.h"
