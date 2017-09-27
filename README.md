@@ -276,7 +276,7 @@ To get information about a player's reaction on notifications add the following 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
     fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
    {
-     [[GWManager sharedManager] receivedRemoteNotification:userInfo withApplication:application fetchCompletionHandler:completionHandler]; 
+     [[GW shared] receivedRemoteNotification:userInfo withApplication:application fetchCompletionHandler:completionHandler]; 
    }
  ```
 
