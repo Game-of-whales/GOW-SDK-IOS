@@ -256,7 +256,7 @@ A special offer can also influence count (count of coins, for example) which a p
 
 ### Step 7
 
-In order to [notifications](http://www.gameofwhales.com/documentation/push-notifications) sending by server  it's necessary to send information about token to it. 
+In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
 ```objective-c
  - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
