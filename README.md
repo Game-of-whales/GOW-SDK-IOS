@@ -121,7 +121,7 @@ A special offer can also influence count (count of coins, for example) which a p
 
 ### Step 7
 
-in order to send notifications from GOW server it is necessary to pass the token information to the server.
+In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
 ```swift
     let token = FIRInstanceID.instanceID().token();
