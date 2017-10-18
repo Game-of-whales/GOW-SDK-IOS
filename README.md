@@ -4,9 +4,16 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.6.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.7.zip)
 
- 
+# Changelog
+
+## 2.0.7
+
+FIXED
+* bug with ```OnPushDelivered``` callback for empty push notification campaign.
+* bug with redeemable once special offer: they could be used many times.
+
 
 # Implementation Guide
 
