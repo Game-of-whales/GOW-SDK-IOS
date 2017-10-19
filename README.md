@@ -11,7 +11,7 @@ Download the latest sdk version from our server:
 ## 2.0.8
 
 FIXED
-* bug with _Delivered_ and _Reacted_ events for push campaigns.
+* bug with _pushDelivered_ and _pushReacted_ events for push campaigns.
 
 
 ## 2.0.7
