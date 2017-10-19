@@ -4,9 +4,15 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.7.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.8.zip)
 
 # Changelog
+
+## 2.0.8
+
+FIXED
+* bug with _Delivered_ and _Reacted_ events for push campaigns.
+
 
 ## 2.0.7
 
