@@ -69,8 +69,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```
 
+### Step 4 (only if you use in-app purchases)
+Register a purchase with ``purchaseTransaction`` method.
 
-### Step 4
+```swift
+ func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    for t in transactions
+       if t.transactionState == SKPaymentTransactionState.purchased
+           GW.shared().purchaseTransaction(t, product: product!);
+```
+
+## Special Offers
+
+### Step 5
 
 If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
 
@@ -89,7 +100,7 @@ class ViewController: UIViewController, GWDelegate
 
 ```
 
-### Step 5
+### Step 6
 Add the following methods:
 
 ```swift
@@ -110,7 +121,7 @@ Add the following methods:
  }
 ```
 
-### Step 6 Special Offers
+### Step 7
 In order to receive a special offer call the following method:
 
 ```swift
@@ -138,7 +149,7 @@ A special offer can also influence count (count of coins, for example) which a p
 
 ## Notifications
 
-### Step 7
+### Step 8
 
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
@@ -147,7 +158,7 @@ In order to send notifications from GOW server it is necessary to pass the token
     GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);
 ```
 
-### Step 8
+### Step 9
 
 To get information about a player's reaction on notifications add the following methods to ```AppDelegate```:
 
@@ -162,7 +173,7 @@ func application(_ application: UIApplication,
                      }
 ```
 
-### Step 9 (Only if notifications are shown inside your app by using the game's code)
+### Step 10 (Only if notifications are shown inside your app by using the game's code)
 
 In order to send the information to _Game of Whales_ regarding a player's reaction on a notification (to increase push campaign's _Reacted_ field) of an already started app call the following method:
 
@@ -198,7 +209,20 @@ Call a method ```launchWithOptions``` when you launch your app.
     [GW initialize:launchOptions :debugLog];
 ```
 
-### Step 4
+### Step 4 (only if you use in-app purchases)
+Register a purchase with ``purchaseTransaction`` method.
+
+```objective-c
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
+     for(SKPaymentTransaction * t in transactions)
+         if (t.transactionState == SKPaymentTransactionStatePurchased)
+                 [[GW shared] purchaseTransaction:t product:product];
+}
+```
+
+## Special Offers
+
+### Step 5
 
 If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```addDelegate``` method.
 
@@ -218,7 +242,7 @@ If you want to use [special offers](http://www.gameofwhales.com/documentation/sp
 
 ```
 
-### Step 5
+### Step 6
 Add the following methods:
 
 ```objective-c
@@ -243,7 +267,7 @@ Add the following methods:
 }
 ```
 
-### Step 6  Special Offers
+### Step 7
 
 In order to receive a special offer call the following method: 
 
@@ -273,7 +297,7 @@ A special offer can also influence count (count of coins, for example) which a p
  ```
 ## Notifications
 
-### Step 7
+### Step 8
 
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
@@ -288,7 +312,7 @@ In order to send notifications from GOW server it is necessary to pass the token
 }
 ```
 
-### Step 8
+### Step 9
 To get information about a player's reaction on notifications add the following methods to ```AppDelegate```:
 
 ```objective-c
@@ -299,7 +323,7 @@ To get information about a player's reaction on notifications add the following 
    }
  ```
 
-### Step 9 (Only if notifications are shown inside your app by using the game's code)
+### Step 10 (Only if notifications are shown inside your app by using the game's code)
 In order to send the information to *Game of Whales* regarding a player's reaction on a notification (to increase push campaign's Reacted field) of an already started app call the following method:
 
 ```objective-c
