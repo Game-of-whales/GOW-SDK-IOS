@@ -242,7 +242,7 @@ If you want to use [special offers](http://www.gameofwhales.com/documentation/sp
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [[GW shared] addDelegate:self];
+    [[GW shared] removeDelegate:self];
 }
 
 ```
