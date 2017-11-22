@@ -88,7 +88,7 @@ Register a purchase with ``purchaseTransaction`` method.
 
 ### Step 5
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWDelegate``` protocol and call ```add``` method.
 
 ```swift
 class ViewController: UIViewController, GWDelegate     
@@ -229,10 +229,10 @@ Register a purchase with ``purchaseTransaction`` method.
 
 ### Step 5
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```addDelegate``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWDelegate``` protocol and call ```addDelegate``` method.
 
 ```objective-c
-@interface ViewController : UIViewController<GWManagerDelegate>
+@interface ViewController : UIViewController<GWDelegate>
 ...
 - (void)viewDidLoad {
     [super viewDidLoad];
