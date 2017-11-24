@@ -159,8 +159,13 @@ A special offer can also influence count (count of coins, for example) which a p
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
 ```swift
+    //FIREBASE
     let token = FIRInstanceID.instanceID().token();
     GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);
+    
+    //APN
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        GW.shared().registerDeviceToken(with: deviceToken, provider: GW_PROVIDER_APN)
 ```
 
 ### Step 9
@@ -183,20 +188,10 @@ func application(_ application: UIApplication,
 In order to send the information to _Game of Whales_ regarding a player's reaction on a notification (to increase push campaign's _Reacted_ field) of an already started app call the following method:
 
 ```swift
-      GWManager.shared().pushReacted(pushID);
+      func onPushDelivered(_ camp: String, title:String, message:String) {
+            //Show message and call:
+            GW.shared().reactedRemoteNotification(withCampaign: camp);
 ```
-
-You can get _pushID_ like this:
-
-```swift
-func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-                     
-                     let pushID = GWManager.shared().getPushID(userInfo);
-                     ... //Show message and than call pushReacted
-```
-
 
 
 
