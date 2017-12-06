@@ -194,6 +194,34 @@ In order to send the information to _Game of Whales_ regarding a player's reacti
 ```
 
 
+## Converting
+
+### Step 11
+
+``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+
+For example:
+
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+```swift
+      GW.shared().converting(["coins":-1000, "gas":-50, "bike_1":1], place: "bank")
+```
+
+You can also use the following methods:
+
+``Consume`` - to buy items for game currency. For example:
+
+```swift
+    GW.shared().consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
+```
+
+``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+
+```swift
+    GW.shared().acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
+```
+
+
 
 # Objective-C
 
@@ -333,6 +361,41 @@ In order to send the information to *Game of Whales* regarding a player's reacti
     [[GW shared] reactedRemoteNotificationWithCampaign:camp];
 }
 ```
+
+
+## Converting
+
+### Step 11
+
+``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+
+For example:
+
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+
+```objc
+        NSMutableDictionary *resources = [NSMutableDictionary dictionary];
+        resources[@"coins"] = @-1000;
+        resources[@"gas"] = @-50;
+        resources[@"bike_1"] = 1;
+        [[GW shared] converting:resources place:@"bank"]
+```
+
+You can also use the following methods:
+
+``Consume`` - to buy items for game currency. For example:
+
+```objc
+    [GW ConsumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
+```
+
+``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+
+```objc
+    [[GW shared] acquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
+```
+
+
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
 
