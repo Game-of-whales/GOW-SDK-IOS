@@ -404,7 +404,7 @@ In order to send the information to *Game of Whales* regarding a player's reacti
 
 ## Converting
 
-### Step 11
+### Step 12
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
