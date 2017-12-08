@@ -7,25 +7,38 @@ Download the latest sdk version from our server:
 [<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.11.zip)
 
 # Changelog
-## 2.0.10
+
+### 2.0.11
+
+MODIFIED
+
+* Push notification about special offer comes at the same time with the special offer (new parameter _offer_ was added):<br/>
+``void onPushDelivered(SpecialOffer offer, String campID, String title, String message);``
+
+* ``setPushNotificationsEnable`` method was added to allow user to turn off the push notifications.
+
+* Added static methods instead of _shared_ methods.
+
+
+### 2.0.10
 
 FIXED
 * _pushReacted_ sending with empty _camp_.
 
 
-## 2.0.9
+### 2.0.9
 
 MODIFIED
 * renamed "Reachability" class to "GWReachability".
 
 
-## 2.0.8
+### 2.0.8
 
 FIXED
 * bug with _pushDelivered_ and _pushReacted_ events for push campaigns.
 
 
-## 2.0.7
+### 2.0.7
 
 FIXED
 * bug with ```OnPushDelivered``` callback for empty push notification campaign.
