@@ -4,7 +4,7 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.11.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.10.zip)
 
 # Changelog
 
