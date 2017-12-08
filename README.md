@@ -4,9 +4,14 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.9.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-IOS/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/archive/v2.0.10.zip)
 
 # Changelog
+## 2.0.10
+
+FIXED
+* _pushReacted_ sending with empty _camp_.
+
 
 ## 2.0.9
 
@@ -83,7 +88,7 @@ Register a purchase with ``purchaseTransaction`` method.
 
 ### Step 5
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```add``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWDelegate``` protocol and call ```add``` method.
 
 ```swift
 class ViewController: UIViewController, GWDelegate     
@@ -154,8 +159,13 @@ A special offer can also influence count (count of coins, for example) which a p
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
 ```swift
+    //FIREBASE
     let token = FIRInstanceID.instanceID().token();
     GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);
+    
+    //APN
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        GW.shared().registerDeviceToken(with: deviceToken, provider: GW_PROVIDER_APN)
 ```
 
 ### Step 9
@@ -178,20 +188,38 @@ func application(_ application: UIApplication,
 In order to send the information to _Game of Whales_ regarding a player's reaction on a notification (to increase push campaign's _Reacted_ field) of an already started app call the following method:
 
 ```swift
-      GWManager.shared().pushReacted(pushID);
+      func onPushDelivered(_ camp: String, title:String, message:String) {
+            //Show message and call:
+            GW.shared().reactedRemoteNotification(withCampaign: camp);
 ```
 
-You can get _pushID_ like this:
+
+## Converting
+
+### Step 11
+
+``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+
+For example:
+
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+```swift
+      GW.shared().converting(["coins":-1000, "gas":-50, "bike_1":1], place: "bank")
+```
+
+You can also use the following methods:
+
+``Consume`` - to buy items for game currency. For example:
 
 ```swift
-func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
-                     
-                     let pushID = GWManager.shared().getPushID(userInfo);
-                     ... //Show message and than call pushReacted
+    GW.shared().consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
 ```
 
+``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+
+```swift
+    GW.shared().acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
+```
 
 
 
@@ -224,10 +252,10 @@ Register a purchase with ``purchaseTransaction`` method.
 
 ### Step 5
 
-If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWManagerDelegate``` protocol and call ```addDelegate``` method.
+If you want to use [special offers](http://www.gameofwhales.com/documentation/special-offers), you need to implement some methods of ```GWDelegate``` protocol and call ```addDelegate``` method.
 
 ```objective-c
-@interface ViewController : UIViewController<GWManagerDelegate>
+@interface ViewController : UIViewController<GWDelegate>
 ...
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -237,7 +265,7 @@ If you want to use [special offers](http://www.gameofwhales.com/documentation/sp
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [[GW shared] addDelegate:self];
+    [[GW shared] removeDelegate:self];
 }
 
 ```
@@ -333,6 +361,41 @@ In order to send the information to *Game of Whales* regarding a player's reacti
     [[GW shared] reactedRemoteNotificationWithCampaign:camp];
 }
 ```
+
+
+## Converting
+
+### Step 11
+
+``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+
+For example:
+
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+
+```objc
+        NSMutableDictionary *resources = [NSMutableDictionary dictionary];
+        resources[@"coins"] = @-1000;
+        resources[@"gas"] = @-50;
+        resources[@"bike_1"] = 1;
+        [[GW shared] converting:resources place:@"bank"]
+```
+
+You can also use the following methods:
+
+``Consume`` - to buy items for game currency. For example:
+
+```objc
+    [GW ConsumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
+```
+
+``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+
+```objc
+    [[GW shared] acquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
+```
+
+
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
 
