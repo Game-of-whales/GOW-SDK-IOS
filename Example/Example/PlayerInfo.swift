@@ -101,13 +101,13 @@ class PlayerInfo
     public func addLevel()
     {
         level += 1;
-        GW.shared().profile(["level":level])
+        GW.profile(["level":level])
         save()
     }
     
     public func incCoins(val:Int){
         coins += val;
-        GW.shared().profile(["coins":coins]);
+        GW.profile(["coins":coins]);
         save();
     }
     
@@ -117,7 +117,7 @@ class PlayerInfo
     
     public func decCoins(val:Int) {
         coins -= val
-        GW.shared().profile(["coins":coins]);
+        GW.profile(["coins":coins]);
         save();
     }
     
@@ -139,7 +139,7 @@ class PlayerInfo
             locationCode = 0;
         }
         
-        GW.shared().profile(["location_\(locationCode)":true])
+        GW.profile(["location_\(locationCode)":true])
         
         updateLocation()
         save()

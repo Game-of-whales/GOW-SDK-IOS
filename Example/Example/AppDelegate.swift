@@ -100,7 +100,7 @@ class AppDelegate: MessagingRemoteMessage, UIApplicationDelegate  {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print("GOW.Example: token", deviceTokenString)
         
-        GW.shared().registerDeviceToken(with: deviceTokenString, provider: GW_PROVIDER_APN)
+        GW.registerDeviceToken(with: deviceTokenString, provider: GW_PROVIDER_APN)
     }
     func applicationWillTerminate(_ application: UIApplication) {
     }
@@ -117,7 +117,7 @@ class AppDelegate: MessagingRemoteMessage, UIApplicationDelegate  {
         /*let controller = self.window?.rootViewController as! ViewController
         controller.OnRemoteNotificationReceived(notification: userInfo)*/
 
-        GW.shared().receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
+        GW.receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
         
        /* if (application.applicationState == UIApplicationState.active)
         {

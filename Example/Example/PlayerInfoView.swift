@@ -68,7 +68,7 @@ class PlayerInfoView : UIViewController
     {
         var text = item;
         
-        let offer = GW.shared().getSpecialOffer(item);
+        let offer = GW.getSpecialOffer(item);
         
         var cost = PlayerInfo.sharedInstance.getItemCost(itemID: item);
         
@@ -128,7 +128,7 @@ class PlayerInfoView : UIViewController
     {
         var cost = PlayerInfo.sharedInstance.getItemCost(itemID: id);
         
-        let offer = GW.shared().getSpecialOffer(id);
+        let offer = GW.getSpecialOffer(id);
         
         if (offer != nil){
             cost = Int( Float(cost) * offer!.priceFactor);
@@ -137,7 +137,7 @@ class PlayerInfoView : UIViewController
         if (PlayerInfo.sharedInstance.canBuy(cost: cost))
         {
             PlayerInfo.sharedInstance.decCoins(val: cost);
-            GW.shared().converting(["coins" : -cost as NSNumber, id: 1], place: "shop");
+            GW.converting(["coins" : -cost as NSNumber, id: 1], place: "shop");
             updateViewParameters();
         }
     }

@@ -82,13 +82,13 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        GW.shared().add(self);
+        GW.add(self);
         SKPaymentQueue.default().add(self);
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         //remove self from delegates
-        GW.shared().remove(self)
+        GW.remove(self)
         SKPaymentQueue.default().remove(self);
     }
     
@@ -108,12 +108,12 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
         NSLog("Special offer updated");
     }
     
-    func onPushDelivered(_ camp: String, title:String, message:String) {
+    func onPushDelivered(_ offer:GWSpecialOffer?, camp: String, title:String, message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert);
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil);
         alert.addAction(ok)
         present(alert, animated: true, completion: {
-            GW.shared().reactedRemoteNotification(withCampaign: camp);
+            GW.reactedRemoteNotification(withCampaign: camp);
         })
     }
     
@@ -147,7 +147,7 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
             title = p!.localizedTitle + " for \(p!.price)";
         }
         
-        let offer = GW.shared().getSpecialOffer(productIdentifier);
+        let offer = GW.getSpecialOffer(productIdentifier);
         
         if (offer != nil && (offer?.hasCountFactor())!)
         {
@@ -200,8 +200,8 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
                 PlayerInfo.sharedInstance.incCoins(val: coins);
                 
                 let product = products[t.payment.productIdentifier]
-                GW.shared().purchaseTransaction(t, product: product!);
-                GW.shared().converting(["coins":coins as NSNumber, t.payment.productIdentifier:-1], place: "bank")
+                GW.purchaseTransaction(t, product: product!);
+                GW.converting(["coins":coins as NSNumber, t.payment.productIdentifier:-1], place: "bank")
                 NotificationCenter.default.post(name: .onViewNeedUpdate, object: nil);
                 
                 SKPaymentQueue.default().finishTransaction(t)
