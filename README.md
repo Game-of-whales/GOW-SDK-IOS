@@ -94,7 +94,7 @@ Register a purchase with ``purchaseTransaction`` method.
  func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
     for t in transactions
        if t.transactionState == SKPaymentTransactionState.purchased
-           GW.purchaseTransaction(t, product: product!);
+           GW.shared().purchaseTransaction(t, product: product!);
 ```
 
 ## Special Offers
@@ -108,13 +108,13 @@ class ViewController: UIViewController, GWDelegate
 ...
 
      override func viewWillAppear(_ animated: Bool) {
-         GWManager.add(self)
+         GWManager.shared().add(self)
      }
    
      override func viewDidDisappear(_ animated: Bool) {
      
         //remove self from delegates
-        GWManager.remove(self)
+        GWManager.shared().remove(self)
 
 ```
 
@@ -134,7 +134,7 @@ Add the following methods:
  {
  }
  
- func onPushDelivered(_ offer:GWSpecialOffer?, camp: String, title:String, message:String)
+ func onPushDelivered(_ camp: String, title:String, message:String)
  {
  }
 ```
@@ -174,11 +174,11 @@ In order to send notifications from GOW server it is necessary to pass the token
 ```swift
     //FIREBASE
     let token = FIRInstanceID.instanceID().token();
-    GW.registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);
+    GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);
     
     //APN
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        GW.registerDeviceToken(with: deviceToken, provider: GW_PROVIDER_APN)
+        GW.shared().registerDeviceToken(with: deviceToken, provider: GW_PROVIDER_APN)
 ```
 
 ### Step 9
@@ -191,7 +191,7 @@ func application(_ application: UIApplication,
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
                      {
                      
-                     GWManager.receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
+                     GWManager.shared().receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler);
                      
                      }
 ```
@@ -201,9 +201,9 @@ func application(_ application: UIApplication,
 In order to send the information to _Game of Whales_ regarding a player's reaction on a notification (to increase push campaign's _Reacted_ field) of an already started app call the following method:
 
 ```swift
-      func onPushDelivered(_ offer:GWSpecialOffer?, camp: String, title:String, message:String) {
+      func onPushDelivered(_ camp: String, title:String, message:String) {
             //Show message and call:
-            GW.reactedRemoteNotification(withCampaign: camp);
+            GW.shared().reactedRemoteNotification(withCampaign: camp);
 ```
 
 ## Profiles
@@ -214,7 +214,7 @@ In order to send the information to _Game of Whales_ regarding a player's reacti
 
 For example:
 ```swift
-    GW.profile(["coins":1000, "class":"wizard", "gender":true, "locatiom":"A"]);
+    GW.shared().profile(["coins":1000, "class":"wizard", "gender":true, "locatiom":"A"]);
  ```
 
 ## Converting
@@ -227,7 +227,7 @@ For example:
 
 Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
 ```swift
-      GW.converting(["coins":-1000, "gas":-50, "bike_1":1], place: "bank")
+      GW.shared().converting(["coins":-1000, "gas":-50, "bike_1":1], place: "bank")
 ```
 
 You can also use the following methods:
@@ -235,13 +235,13 @@ You can also use the following methods:
 ``consume`` - to buy items for game currency. For example:
 
 ```swift
-    GW.consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
+    GW.shared().consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
 ```
 
 ``acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
 
 ```swift
-    GW.acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
+    GW.shared().acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
 ```
 
 
@@ -267,7 +267,7 @@ Register a purchase with ``purchaseTransaction`` method.
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
      for(SKPaymentTransaction * t in transactions)
          if (t.transactionState == SKPaymentTransactionStatePurchased)
-                 [GW PurchaseTransaction:t product:product];
+                 [[GW shared] purchaseTransaction:t product:product];
 }
 ```
 
@@ -283,12 +283,12 @@ If you want to use [special offers](http://www.gameofwhales.com/documentation/sp
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [GW AddDelegate:self];
+    [[GW shared] addDelegate:self];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [GW RemoveDelegate:self];
+    [[GW shared] removeDelegate:self];
 }
 
 ```
@@ -307,7 +307,7 @@ Add the following methods:
     
 }
 
-- (void)onPushDelivered:(nullable GWSpecialOffer*) offer camp:(nonnull NSString *)camp title:(nonnull NSString*)title message:(nonnull NSString*)message
+- (void)onPushDelivered:(nonnull NSString *)camp title:(nonnull NSString*)title message:(nonnull NSString*)message
 {
     
 }
@@ -323,7 +323,7 @@ Add the following methods:
 In order to receive a special offer call the following method: 
 
 ```objective-c
-    GWSpecialOffer* so = [GW GetSpecialOffer:productIdentifer];
+    GWSpecialOffer* so = [[GW shared] getSpecialOffer:productIdentifer];
     if (so != nil)
     {
       ...
@@ -356,10 +356,10 @@ In order to send notifications from GOW server it is necessary to pass the token
  - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
  
     //FIREBASE
-    [GW RegisterDeviceTokenWithString:[[FIRInstanceID instanceID] token] provider:GW_PROVIDER_FCM];
+    [[GW shared] registerDeviceTokenWithString:[[FIRInstanceID instanceID] token] provider:GW_PROVIDER_FCM];
     
     //APN
-    [GW RegisterDeviceTokenWithData:deviceToken provider:GW_PROVIDER_APN];
+    [[GW shared] registerDeviceTokenWithData:deviceToken provider:GW_PROVIDER_APN];
 }
 ```
 
@@ -370,7 +370,7 @@ To get information about a player's reaction on notifications add the following 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
     fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
    {
-     [GW ReceivedRemoteNotification:userInfo withApplication:application fetchCompletionHandler:completionHandler]; 
+     [[GW shared] receivedRemoteNotification:userInfo withApplication:application fetchCompletionHandler:completionHandler]; 
    }
  ```
 
@@ -378,10 +378,10 @@ To get information about a player's reaction on notifications add the following 
 In order to send the information to *Game of Whales* regarding a player's reaction on a notification (to increase push campaign's Reacted field) of an already started app call the following method:
 
 ```objective-c
-- (void)onPushDelivered:(nullable GWSpecialOffer*) offer camp:(nonnull NSString *)camp title:(nonnull NSString*)title message:(nonnull NSString*)message
+- (void)onPushDelivered:(nonnull NSString *)camp title:(nonnull NSString*)title message:(nonnull NSString*)message
 {
     //Show the notification to a player and then call the following method
-    [GW ReactedRemoteNotificationWithCampaign:camp];
+    [[GW shared] reactedRemoteNotificationWithCampaign:camp];
 }
 ```
 
@@ -399,7 +399,7 @@ In order to send the information to *Game of Whales* regarding a player's reacti
      message[@"class"] = @"wizard";
      message[@"gender"] = @TRUE;
      message[@"location"] = @"A";
-     [GW Profile:changes];
+     [[GW shared] profile:changes];
  ```
 
 ## Converting
@@ -417,7 +417,7 @@ Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the f
         resources[@"coins"] = @-1000;
         resources[@"gas"] = @-50;
         resources[@"bike_1"] = 1;
-        [GW Converting:resources place:@"bank"]
+        [[GW shared] converting:resources place:@"bank"]
 ```
 
 You can also use the following methods:
@@ -425,13 +425,13 @@ You can also use the following methods:
 ``Consume`` - to buy items for game currency. For example:
 
 ```objc
-    [GW ConsumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
+    [[GW shared] consumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
 ```
 
 ``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
 
 ```objc
-    [GW AcquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
+    [[GW shared] acquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
 ```
 
 
