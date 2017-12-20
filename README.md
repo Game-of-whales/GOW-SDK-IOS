@@ -206,9 +206,17 @@ In order to send the information to _Game of Whales_ regarding a player's reacti
             GW.reactedRemoteNotification(withCampaign: camp);
 ```
 
+### Step 11
+
+In order to enable or disable push notifications, use the following method:
+
+```swift
+   GW.setPushNotificationsEnable(false);
+```
+
 ## Profiles
 
-### Step 11
+### Step 12
 
 ``profile`` method should be called if key parameters of your app or a player have changed.
 
@@ -219,7 +227,7 @@ For example:
 
 ## Converting
 
-### Step 12
+### Step 13
 
 ``converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
@@ -385,9 +393,18 @@ In order to send the information to *Game of Whales* regarding a player's reacti
 }
 ```
 
+### Step 11
+
+In order to enable or disable push notifications, use the following method:
+
+```objective-c
+  [GW SetPushNotificationsEnable:false];
+```
+
+
 ## Profiles
 
-### Step 11
+### Step 12
 
 ``Profile`` method should be called if key parameters of your app or a player have changed.
  
@@ -404,7 +421,7 @@ In order to send the information to *Game of Whales* regarding a player's reacti
 
 ## Converting
 
-### Step 12
+### Step 13
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
