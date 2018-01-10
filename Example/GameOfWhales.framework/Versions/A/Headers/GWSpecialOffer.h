@@ -25,6 +25,7 @@
 - (BOOL)isExpired;
 -(bool)hasPriceFactor;
 -(bool)hasCountFactor;
+-(long)getLeftTime;
 @end
 
 #endif
