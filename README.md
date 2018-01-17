@@ -220,6 +220,8 @@ In order to enable or disable push notifications, use the following method:
    GW.setPushNotificationsEnable(false);
 ```
 
+In order to check notifications implementation send [a test notification](http://www.gameofwhales.com/documentation/how-send-test-push-notification).
+
 ## Profiles
 
 ### Step 12
@@ -406,6 +408,8 @@ In order to enable or disable push notifications, use the following method:
 ```objective-c
   [GW SetPushNotificationsEnable:false];
 ```
+
+In order to check notifications implementation send [a test notification](http://www.gameofwhales.com/documentation/how-send-test-push-notification).
 
 
 ## Profiles
