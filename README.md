@@ -79,7 +79,7 @@ Add ```GWGameKey``` parameter to ```info.plist``` and specify your [game key](ht
 ## SWIFT
 
 ### Step 3
-Call a method ```launch``` when you launch your app.
+Call ```initialize``` method when you launch your app.
 
 ```swift
 import GameOfWhales
@@ -104,6 +104,10 @@ Register a purchase with ``purchaseTransaction`` method.
 ```
 
 ## Special Offers
+
+Before any product can be used in a special offer it has to be bought by someone after SDK has been implemented into the game. Please make sure your game has at least one purchase of the product that is going to be used in the special offer.
+If you want to create a special offer for in game resource, please, make sure your game has at least one _converting_ event with the appropriate resource (the quantity of the resource in the event should be 1).
+
 
 ### Step 5
 
@@ -265,7 +269,7 @@ You can also use the following methods:
 # Objective-C
 
 ### Step 3
-Call a method ```launchWithOptions``` when you launch your app.
+Call ```initialize``` method when you launch your app.
 
 ```objective-c
 #import <GameOfWhales/GameOfWhales.h>
@@ -288,6 +292,9 @@ Register a purchase with ``purchaseTransaction`` method.
 ```
 
 ## Special Offers
+
+Before any product can be used in a special offer it has to be bought by someone after SDK has been implemented into the game. Please make sure your game has at least one purchase of the product that is going to be used in the special offer.
+If you want to create a special offer for in game resource, please, make sure your game has at least one _converting_ event with the appropriate resource (the quantity of the resource in the event should be 1).
 
 ### Step 5
 
