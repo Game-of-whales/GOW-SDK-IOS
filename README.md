@@ -177,7 +177,13 @@ A special offer can also influence count (count of coins, for example) which a p
 
 ## Notifications
 
-### Step 8
+### Step 8 (for iOS only)
+
+Enable the _Push Notifications_ option in the _Xcode_.
+
+<img src=http://www.gameofwhales.com/sites/default/files/documentation/iOS%20notification.png>
+
+### Step 9
 
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
@@ -191,7 +197,7 @@ In order to send notifications from GOW server it is necessary to pass the token
         GW.registerDeviceToken(with: deviceToken, provider: GW_PROVIDER_APN)
 ```
 
-### Step 9
+### Step 10
 
 To get information about a player's reaction on notifications add the following methods to ```AppDelegate```:
 
@@ -206,7 +212,7 @@ func application(_ application: UIApplication,
                      }
 ```
 
-### Step 10 (Only if notifications are shown inside your app by using the game's code)
+### Step 11 (Only if notifications are shown inside your app by using the game's code)
 
 In order to send the information to _Game of Whales_ regarding a player's reaction on a notification (to increase push campaign's _Reacted_ field) of an already started app call the following method:
 
@@ -216,7 +222,7 @@ In order to send the information to _Game of Whales_ regarding a player's reacti
             GW.reactedRemoteNotification(withCampaign: camp);
 ```
 
-### Step 11
+### Step 12
 
 In order to enable or disable push notifications, use the following method:
 
@@ -228,7 +234,7 @@ In order to check notifications implementation send [a test notification](http:/
 
 ## Profiles
 
-### Step 12
+### Step 13
 
 ``profile`` method should be called if key parameters of your app or a player have changed.
 
@@ -239,7 +245,7 @@ For example:
 
 ## Converting
 
-### Step 13
+### Step 14
 
 ``converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
@@ -371,7 +377,13 @@ A special offer can also influence count (count of coins, for example) which a p
  ```
 ## Notifications
 
-### Step 8
+### Step 8 (for iOS only)
+
+Enable the _Push Notifications_ option in the _Xcode_.
+
+<img src=http://www.gameofwhales.com/sites/default/files/documentation/iOS%20notification.png>
+
+### Step 9
 
 In order to send notifications from GOW server it is necessary to pass the token information to the server.
 
@@ -386,7 +398,7 @@ In order to send notifications from GOW server it is necessary to pass the token
 }
 ```
 
-### Step 9
+### Step 10
 To get information about a player's reaction on notifications add the following methods to ```AppDelegate```:
 
 ```objective-c
@@ -397,7 +409,7 @@ To get information about a player's reaction on notifications add the following 
    }
  ```
 
-### Step 10 (Only if notifications are shown inside your app by using the game's code)
+### Step 11 (Only if notifications are shown inside your app by using the game's code)
 In order to send the information to *Game of Whales* regarding a player's reaction on a notification (to increase push campaign's Reacted field) of an already started app call the following method:
 
 ```objective-c
@@ -408,7 +420,7 @@ In order to send the information to *Game of Whales* regarding a player's reacti
 }
 ```
 
-### Step 11
+### Step 12
 
 In order to enable or disable push notifications, use the following method:
 
@@ -421,7 +433,7 @@ In order to check notifications implementation send [a test notification](http:/
 
 ## Profiles
 
-### Step 12
+### Step 13
 
 ``Profile`` method should be called if key parameters of your app or a player have changed.
  
@@ -438,7 +450,7 @@ In order to check notifications implementation send [a test notification](http:/
 
 ## Converting
 
-### Step 13
+### Step 14
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
