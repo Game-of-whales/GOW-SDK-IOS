@@ -263,13 +263,15 @@ You can also use the following methods:
 ```swift
     GW.consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
 ```
+It means that someone spent 1000 "coins" for 50 "gas" in "shop".
+
 
 ``acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
 
 ```swift
     GW.acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
 ```
-
+It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 
 # Objective-C
@@ -473,13 +475,16 @@ You can also use the following methods:
 ```objc
     [GW ConsumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
 ```
+It means that someone spent 1000 "coins" for 50 "gas" in "shop".
+
+
 
 ``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
 
 ```objc
     [GW AcquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
 ```
-
+It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
