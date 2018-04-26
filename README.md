@@ -94,7 +94,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 ## Purchases
 
-Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
+>Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
 Register a purchase with ``purchaseTransaction`` method.
@@ -298,7 +298,7 @@ Call ```initialize``` method when you launch your app.
 
 ## Purchases
 
-Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
+>Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
 Register a purchase with ``purchaseTransaction`` method.
