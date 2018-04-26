@@ -92,6 +92,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
    GW.initialize( launchOptions, false);
 
 ```
+## Purchases
+
+Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
 Register a purchase with ``purchaseTransaction`` method.
@@ -236,7 +239,12 @@ In order to check notifications implementation send [a test notification](http:/
 
 ### Step 13
 
-``profile`` method should be called if key parameters of your app or a player have changed.
+You can send additional data about your players by using the ``profile`` method. ``profile`` method should be called if key parameters of your app or a player have changed.
+
+>If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
+
+>If the length of a string-type property is more than 64 characters, **Game of Whales** will save only the first 64 characters.
+
 
 For example:
 ```swift
@@ -287,6 +295,10 @@ Call ```initialize``` method when you launch your app.
     BOOL debugLog = false;
     [GW initialize:launchOptions :debugLog];
 ```
+
+## Purchases
+
+Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
 Register a purchase with ``purchaseTransaction`` method.
@@ -437,7 +449,11 @@ In order to check notifications implementation send [a test notification](http:/
 
 ### Step 13
 
-``Profile`` method should be called if key parameters of your app or a player have changed.
+You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
+
+>If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
+
+>If the length of a string-type property is more than 64 characters, **Game of Whales** will save only the first 64 characters.
  
  For example:
  
