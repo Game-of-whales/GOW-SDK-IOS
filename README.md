@@ -4,9 +4,17 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.12/GOW-SDK-IOS-FRAMEWORK-2.0.12.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.13/GameOfWhales.framework.zip)
 
 # Changelog
+
+### 2.0.13 (May 14, 2018)
+
+ADDED
+
+* Custom data is supported for special offers.
+* The information about a device's locale is sent to **Game of Whales**.
+
 
 ### 2.0.12 (Jan 11, 2018)
 
@@ -176,6 +184,14 @@ A special offer can also influence count (count of coins, for example) which a p
    {
        coins = Int(Float(coins) * (offer?.countFactor)!);
    }
+```
+
+It's possible to pass [custom data](https://www.gameofwhales.com/documentation/custom-data) to special offers. In order to get the data in game's side, use _customValues_ parameter of  _SpecialOffer_ class.
+
+```swift
+    let str = offer.customValues.valueForKey("your_string") as? NSTring
+    let number = offer.customValues.valueForKey("your_number") as? NSNumber
+    let boolean = offer.customValues.valueForKey("your_bool") as? NSNumber
 ```
 
 ## Notifications
@@ -389,6 +405,15 @@ A special offer can also influence count (count of coins, for example) which a p
        coins *= so.countFactor;
    }
  ```
+ 
+ It's possible to pass [custom data](https://www.gameofwhales.com/documentation/custom-data) to special offers. In order to get the data in game's side, use _customValues_ parameter of  _SpecialOffer_ class.
+ 
+```objective-c
+   NSString * str = [specialOffer.customValues objectForKey:@"your_str"];
+   NSNumber * number = [specialOffer.customValues objectForKey:@"your_int"];
+   NSNumber * boolean = [specialOffer.customValues objectForKey:@"your_bool"];
+```
+ 
 ## Notifications
 
 ### Step 8 (for iOS only)
