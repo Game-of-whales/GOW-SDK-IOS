@@ -4,9 +4,16 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.13/GameOfWhales.framework.zip)
+[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.14/GameOfWhales.framework.zip)
 
 # Changelog
+
+### 2.0.14 (Jun 14, 2018)
+
+ADDED
+
+* ```redeemable``` parameter was added to ```SpecialOffer``` class.
+
 
 ### 2.0.13 (May 14, 2018)
 
