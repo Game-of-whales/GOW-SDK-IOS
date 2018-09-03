@@ -129,6 +129,8 @@ FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
  */
 + (bool)IsPushNotificationsEnabled;
 
++ (NSDate*)GetServerTime;
+
 /*!
  @brief Register currency consume
  @param currency NSString Internal game currency to consume
