@@ -4,9 +4,18 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.14/GameOfWhales.framework.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.15/GameOfWhales.framework.zip)
 
 # Changelog
+
+### 2.0.15 (Sep 25, 2018)
+
+ADDED
+
+* ``GetServerTime`` method was added to get GOW server time.
+* Server time is used in special offers to check the time for the activation.
+
+
 
 ### 2.0.14 (Jun 14, 2018)
 
