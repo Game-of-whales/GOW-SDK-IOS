@@ -176,6 +176,13 @@ Add the following methods:
  }
 ```
 
+The verify state can be:
+
+* _GW_VERIFY_STATE_LEGAL_ - a purchase is normal.
+* _GW_VERIFY_STATE_ILLEGAL_ - a purchase is a cheater's.
+* _GW_VERIFY_STATE_UNDEFINED_ - GOW server couldn't define the state of a purchase. 
+
+
 ### Step 7
 In order to receive a special offer call the following method:
 
@@ -394,6 +401,13 @@ Add the following methods:
     
 }
 ```
+
+The verify state can be:
+
+* _GW_VERIFY_STATE_LEGAL_ - a purchase is normal.
+* _GW_VERIFY_STATE_ILLEGAL_ - a purchase is a cheater's.
+* _GW_VERIFY_STATE_UNDEFINED_ - GOW server couldn't define the state of a purchase. 
+
 
 ### Step 7
 
