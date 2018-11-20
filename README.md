@@ -92,6 +92,16 @@ Add ```GameOfWhales.framework``` to ```Linked Frameworks and Libraries``` XCODE 
 
 <img src=http://www.gameofwhales.com/sites/default/files/documentation/add_framework.png>
 
+
+Load ```GameOfWhalesBundle.bundle``` file to your project.
+
+<img src=http://www.gameofwhales.com/sites/default/files/documentation/load_bundle_file.png>
+
+Than add it to **Build Phase** -> **Copy Bundle Resources**.
+
+<img src=http://www.gameofwhales.com/sites/default/files/documentation/add_bundle_file.png>
+
+
 ### Step 2
 Add ```GWGameKey``` parameter to ```info.plist``` and specify your [game key](http://www.gameofwhales.com/documentation/game).
  
@@ -321,6 +331,50 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
     GW.acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
 ```
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
+
+
+## Ads
+
+> It will be supported since version 2.0.20 of SDK for iOS.
+
+To handle the ads set in **Game of Whales**, you need to do some actions:
+
+### Step 15
+
+Subscribe to the following events to get the information about the current state of the ads by using ``GWDelegate`` (the same as you do it on _Step 6_): 
+
+```swift
+func onAdLoaded() 
+ {
+ }
+    
+ func onAdLoadFailed() 
+ {
+ }
+    
+ func onAdClosed() 
+ {
+ }
+```
+
+### Step 16
+
+Start to load the ads at any place of your code (for example, during the launch of the game):
+
+```swift
+  GW.loadAd()
+```
+
+### Step 17
+
+Add the following code to the part of your game where you want to show the ads:
+
+```swift
+if (GW.isAdLoaded())
+    GW.showAd()
+else
+    GW.loadAd()
+```
 
 
 # Objective-C
@@ -560,6 +614,53 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
     [GW AcquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
 ```
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
+
+
+## Ads
+
+> It will be supported since version 2.0.20 of SDK for iOS.
+
+To handle the ads set in **Game of Whales**, you need to do some actions:
+
+### Step 15
+
+Subscribe to the following events to get the information about the current state of the ads by using ``GWDelegate`` (the same as you do it on _Step 6_): 
+
+```objc
+- (void)onAdLoaded
+{
+
+}
+
+- (void)onAdLoadFailed
+{
+
+}
+
+- (void)onAdClosed
+{
+
+}
+```
+
+### Step 16
+
+Start to load the ads at any place of your code (for example, during the launch of the game):
+
+```objc
+  [GW LoadAd];
+```
+
+### Step 17
+
+Add the following code to the part of your game where you want to show the ads:
+
+```objc
+if ([GW IsAdLoaded])
+        [GW ShowAd];
+else
+        [GW LoadAd];
+```
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
