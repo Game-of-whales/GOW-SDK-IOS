@@ -4,9 +4,17 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.15/GameOfWhales.framework.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.20/gameofwhales.zip)
 
 # Changelog
+
+
+### 2.0.20 (Nov 20, 2018)
+
+ADDED
+
+* The supporting of ads was added.
+
 
 ### 2.0.15 (Sep 25, 2018)
 
@@ -335,7 +343,7 @@ It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 ## Ads
 
-> It will be supported since version 2.0.20 of SDK for iOS.
+> It's supported since version 2.0.20 of SDK for iOS.
 
 To handle the ads set in **Game of Whales**, you need to do some actions:
 
@@ -618,7 +626,7 @@ It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 ## Ads
 
-> It will be supported since version 2.0.20 of SDK for iOS.
+> It's supported since version 2.0.20 of SDK for iOS.
 
 To handle the ads set in **Game of Whales**, you need to do some actions:
 
