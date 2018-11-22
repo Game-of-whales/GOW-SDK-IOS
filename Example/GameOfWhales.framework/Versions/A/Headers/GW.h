@@ -28,6 +28,10 @@ FOUNDATION_EXPORT NSString *_Nonnull const GW_VERIFY_STATE_UNDEFINED;
 FOUNDATION_EXPORT NSString *_Nonnull GW_PLATFORM;
 FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
 
+FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_SHOWED;
+FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_LOADED;
+FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_CLICKED;
+
 @interface GW : NSObject
 /*!
  @brief Is Game of whales SDK initialized
@@ -54,6 +58,17 @@ FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
         :(BOOL)debug;
 
 /*!
+     Load promo adversting
+ */
++ (void)LoadAd;
+
++ (bool)IsAdLoaded;
+/*!
+     Show promo adversting
+ */
++ (void)ShowAd;
+
+/*!
  @brief Enable/disable debug mode
  @param debug BOOL YES/NO
  */
@@ -78,6 +93,11 @@ FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
  @return GWSpecialOffer
  */
 + (nullable GWSpecialOffer *)GetSpecialOffer:(nonnull NSString *)productID;
+
++ (nullable GWSpecialOffer *)GetFutureSpecialOffer:(nonnull NSString *)productID;
+
++ (nullable NSMutableDictionary *)GetProperties;
++ (nullable NSString *)GetUserGroup;
 
 /*!
  @brief Register device token with specified push messages provider
@@ -128,6 +148,8 @@ FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
  @return YES, if push notifications enabled
  */
 + (bool)IsPushNotificationsEnabled;
+
++ (NSDate*)GetServerTime;
 
 /*!
  @brief Register currency consume
@@ -212,6 +234,11 @@ FOUNDATION_EXPORT NSString *_Nonnull GW_VERSION;
  @param camp NSString Current campaign
  */
 + (void)ReactedRemoteNotificationWithCampaign:(nonnull NSString *)camp;
+
++(void)Internal_onAdClosed;
++(void)AdEvent:(NSString *)camp action:(NSString*)action;
 @end
+
+
 
 #endif

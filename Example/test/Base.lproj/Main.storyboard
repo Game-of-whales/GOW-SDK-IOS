@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DYQ-cZ-iR0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View-->
+        <scene sceneID="yXi-Pz-Vvi">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DYQ-cZ-iR0" customClass="MainView" customModule="test" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rv0-XH-sTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679" y="248"/>
+        </scene>
+        <!--Bank View-->
+        <scene sceneID="qfl-sV-Frc">
+            <objects>
+                <viewController storyboardIdentifier="BankView" id="ZEb-bu-T6W" customClass="BankView" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W4s-fN-kGW"/>
+                        <viewControllerLayoutGuide type="bottom" id="gyD-Ea-kmu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MKE-Rn-o4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGW-H9-Xmx" userLabel="messageText">
+                                <rect key="frame" x="0.0" y="646" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-o3-4Mh">
+                                <rect key="frame" x="0.0" y="246" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Product5">
+                                    <color key="titleColor" red="0.0" green="0.26404207101234034" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="product5ButtonActionWithSender:" destination="ZEb-bu-T6W" eventType="touchDown" id="fFJ-7m-udy"/>
+                                </connections>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-lM-omu">
+                                <rect key="frame" x="0.0" y="306" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Product5">
+                                    <color key="titleColor" red="0.0" green="0.26404207099999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="product5ButtonActionWithSender:" destination="ZEb-bu-T6W" eventType="touchDown" id="NWr-xO-4tm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kho-ru-4hf">
+                                <rect key="frame" x="0.0" y="392" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Product20">
+                                    <color key="titleColor" red="0.0" green="0.27176093434694071" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="product20ButtonActionWithSender:" destination="ZEb-bu-T6W" eventType="touchDown" id="lqp-cT-dM5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NlL-dc-1Ga">
+                                <rect key="frame" x="0.0" y="475" width="375" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sub1">
+                                    <color key="titleColor" red="0.0" green="0.26765278780000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="sub1ButtonActionWithSender:" destination="ZEb-bu-T6W" eventType="touchDown" id="UGe-mm-Gvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2M3-mB-s3M">
+                                <rect key="frame" x="2" y="542" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sub2">
+                                    <color key="titleColor" red="0.0" green="0.26765278780000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="sub2ButtonActionWithSender:" destination="ZEb-bu-T6W" eventType="touchDown" id="bxk-r2-dG2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gow-logo-main.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Dk-sG-LRE">
+                                <rect key="frame" x="84" y="44" width="206" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMn-nC-Ea8" userLabel="serverTimeText">
+                                <rect key="frame" x="16" y="219" width="343" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageText" destination="SGW-H9-Xmx" id="xIb-Du-ayS"/>
+                        <outlet property="product10Button" destination="Vle-lM-omu" id="gCY-KP-bNB"/>
+                        <outlet property="product20Button" destination="kho-ru-4hf" id="80c-nG-HXW"/>
+                        <outlet property="product5Button" destination="uxA-o3-4Mh" id="tfl-cy-LWe"/>
+                        <outlet property="serverTimeLabel" destination="GMn-nC-Ea8" id="Nxq-GN-rvm"/>
+                        <outlet property="sub1Button" destination="NlL-dc-1Ga" id="GbK-gF-wyL"/>
+                        <outlet property="sub2Button" destination="2M3-mB-s3M" id="Q4g-eh-c8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbS-aY-kcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.8000000000000007" y="338.68065967016497"/>
+        </scene>
+        <!--Player Info View-->
+        <scene sceneID="MWB-u1-k0u">
+            <objects>
+                <viewController storyboardIdentifier="PlayerInfoView" id="ItU-e5-NoM" customClass="PlayerInfoView" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1f3-tK-tSp"/>
+                        <viewControllerLayoutGuide type="bottom" id="F14-gi-6gP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eDb-cz-hVR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class: Warrior" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-sj-1iN" userLabel="classText">
+                                <rect key="frame" x="16" y="104" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender: Woman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-S6-5Rt" userLabel="genderText">
+                                <rect key="frame" x="16" y="133" width="343" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-sf-Vtb" userLabel="addLevelButton">
+                                <rect key="frame" x="110" y="430" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LEVEL UP ( 1 )">
+                                    <color key="titleColor" red="0.0" green="0.31273641191931612" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLevelWithSender:" destination="ItU-e5-NoM" eventType="touchDown" id="slP-Xd-VC5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coins: 100000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYK-mw-l0b" userLabel="coinsText">
+                                <rect key="frame" x="16" y="75" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kDe-5A-7lW">
+                                <rect key="frame" x="0.0" y="281" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ITEM2   COST: 2000">
+                                    <color key="titleColor" red="0.0" green="0.30975348037463668" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyItem2WithSender:" destination="ItU-e5-NoM" eventType="touchDown" id="qcP-Ij-aWn"/>
+                                </connections>
+                            </button>
+                            <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Av-LD-YJ0">
+                                <rect key="frame" x="0.0" y="211" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ITEM1    COST: 1000">
+                                    <color key="titleColor" red="0.0" green="0.29996623610159201" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyItem1WithSender:" destination="ItU-e5-NoM" eventType="touchDown" id="dca-ft-hDS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Au3-Q5-Njh" userLabel="nextLocationButton">
+                                <rect key="frame" x="87" y="475" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NEXT LOCATION ( A )">
+                                    <color key="titleColor" red="0.0" green="0.34795654344405236" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextLocationWithSender:" destination="ItU-e5-NoM" eventType="touchDown" id="Oof-8a-bB9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addLevelButton" destination="aF5-sf-Vtb" id="1jB-dh-dPQ"/>
+                        <outlet property="buyItem1Button" destination="6Av-LD-YJ0" id="HZs-Gj-MTQ"/>
+                        <outlet property="buyItem2Button" destination="kDe-5A-7lW" id="VkI-nK-Giz"/>
+                        <outlet property="classText" destination="ZwK-sj-1iN" id="7rP-sm-Y89"/>
+                        <outlet property="coinsText" destination="zYK-mw-l0b" id="A51-RP-oPe"/>
+                        <outlet property="genderText" destination="hgv-S6-5Rt" id="yNv-vO-txq"/>
+                        <outlet property="nextLocationButton" destination="Au3-Q5-Njh" id="7Gc-e6-Dpa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6U-2b-Fcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="338.68065967016497"/>
+        </scene>
+        <!--Ad View-->
+        <scene sceneID="q0v-nb-zWd">
+            <objects>
+                <viewController storyboardIdentifier="AdView" id="nSN-a0-ENZ" customClass="AdView" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GoH-bc-xCu"/>
+                        <viewControllerLayoutGuide type="bottom" id="KUM-na-3hO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sZ1-cg-RUh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLy-2g-sw3" userLabel="adstate">
+                                <rect key="frame" x="16" y="75" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="a7j-1Q-RIy" userLabel="adload">
+                                <rect key="frame" x="0.0" y="129" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load Ad">
+                                    <color key="titleColor" red="0.0" green="0.29996623610000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoadAd" destination="nSN-a0-ENZ" eventType="touchDown" id="gcZ-wX-5gb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="KQu-rk-w0u" userLabel="adshow">
+                                <rect key="frame" x="0.0" y="206" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Ad">
+                                    <color key="titleColor" red="0.0" green="0.3097534804" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowAd" destination="nSN-a0-ENZ" eventType="touchDown" id="y8F-ZP-84V"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Future Offers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ9-rP-82L">
+                                <rect key="frame" x="6" y="297" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="35" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="653-mg-xTY">
+                                <rect key="frame" x="16" y="345" width="343" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EP-uu-lR7">
+                                <rect key="frame" x="161" y="293" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FutureOffers / Paramaters"/>
+                                <connections>
+                                    <action selector="ToggleFOPar" destination="nSN-a0-ENZ" eventType="touchDown" id="oX1-gH-Oy8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="adload" destination="a7j-1Q-RIy" id="e5C-ep-52v"/>
+                        <outlet property="adshow" destination="KQu-rk-w0u" id="fM1-TB-yNb"/>
+                        <outlet property="adstate" destination="QLy-2g-sw3" id="SoZ-6e-a5J"/>
+                        <outlet property="fo_par_toggle" destination="8EP-uu-lR7" id="bdE-EV-Jlr"/>
+                        <outlet property="foparTitle" destination="tZ9-rP-82L" id="4QZ-D1-APs"/>
+                        <outlet property="futureOffersList" destination="653-mg-xTY" id="XuY-Ym-UEl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbZ-SY-TWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392.8" y="338.68065967016497"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gow-logo-main.png" width="571" height="624"/>
+    </resources>
+</document>

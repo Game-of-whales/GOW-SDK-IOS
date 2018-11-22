@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EBA12A120F4AE0800480702 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA12A020F4AE0800480702 /* NotificationService.m */; };
+		3EBA12A520F4AE0800480702 /* nse.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3EBA129D20F4AE0700480702 /* nse.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5644E3BE1EA66611001C1E0A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5644E3C01EA66611001C1E0A /* TestView.xib */; };
+		5644E3C51EA694B1001C1E0A /* gow-logo-main.png in Resources */ = {isa = PBXBuildFile; fileRef = 5644E3C41EA694B1001C1E0A /* gow-logo-main.png */; };
+		565678321D996864008D309F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565678311D996864008D309F /* AppDelegate.swift */; };
+		565678371D996864008D309F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565678351D996864008D309F /* Main.storyboard */; };
+		565678391D996864008D309F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565678381D996864008D309F /* Assets.xcassets */; };
+		5656783C1D996864008D309F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5656783A1D996864008D309F /* LaunchScreen.storyboard */; };
+		56DCE3B11E0060DE00F1E18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */; };
+		56FDF0C71E9EA0A8007A5A91 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */; };
+		8F0356818163A564C17B7F2E /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */; };
+		92074BAC2194797D00343C26 /* GameOfWhalesBundle.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */; };
+		92615DD31EE98D35007F8E2D /* libGameOfWhales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92615DD21EE98D35007F8E2D /* libGameOfWhales.a */; };
+		927568441EEFE070007AC7AE /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927568431EEFE070007AC7AE /* PlayerInfo.swift */; };
+		927EF25321A6DF8800CC5F5A /* GameOfWhales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */; };
+		92A4DDF0219EC1A500381D72 /* GameOfWhalesBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */; };
+		92A866931EFA653900B593E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866921EFA653900B593E8 /* MainView.swift */; };
+		92A866951EFA676100B593E8 /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866941EFA676100B593E8 /* BankView.swift */; };
+		92A866971EFA676F00B593E8 /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866961EFA676F00B593E8 /* PlayerInfoView.swift */; };
+		92E5CA342194298A007197D6 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5CA332194298A007197D6 /* AdView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EBA12A320F4AE0800480702 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 565678261D996864008D309F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EBA129C20F4AE0700480702;
+			remoteInfo = nse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3EBA12A920F4AE0800480702 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3EBA12A520F4AE0800480702 /* nse.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A378801EDC596800D7FAF5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3EBA129D20F4AE0700480702 /* nse.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = nse.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBA129F20F4AE0800480702 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		3EBA12A020F4AE0800480702 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		3EBA12A220F4AE0800480702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CD76014D8EC750B9031176 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
+		4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5644E3C31EA66620001C1E0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TestView.xib; sourceTree = "<group>"; };
+		5644E3C41EA694B1001C1E0A /* gow-logo-main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gow-logo-main.png"; sourceTree = "<group>"; };
+		5656782E1D996864008D309F /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		565678311D996864008D309F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		565678361D996864008D309F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		565678381D996864008D309F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5656783B1D996864008D309F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5656783D1D996864008D309F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56FDF0C41E9E9BA7007A5A91 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
+		56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = GameOfWhalesBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		92615DD01EE98C34007F8E2D /* libGameOfWhales.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGameOfWhales.a; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphonesimulator/libGameOfWhales.a"; sourceTree = "<group>"; };
+		92615DD21EE98D35007F8E2D /* libGameOfWhales.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGameOfWhales.a; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphoneos/libGameOfWhales.a"; sourceTree = "<group>"; };
+		927568431EEFE070007AC7AE /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GameOfWhales.framework; sourceTree = "<group>"; };
+		92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GameOfWhalesBundle.bundle; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphoneos/GameOfWhalesBundle.bundle"; sourceTree = "<group>"; };
+		92A866921EFA653900B593E8 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		92A866941EFA676100B593E8 /* BankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
+		92A866961EFA676F00B593E8 /* PlayerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
+		92E5CA332194298A007197D6 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		ECAA7F1EABE35FBDABC0E736 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EBA129A20F4AE0700480702 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5656782B1D996864008D309F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56FDF0C71E9EA0A8007A5A91 /* StoreKit.framework in Frameworks */,
+				8F0356818163A564C17B7F2E /* Pods_test.framework in Frameworks */,
+				927EF25321A6DF8800CC5F5A /* GameOfWhales.framework in Frameworks */,
+				92074BAC2194797D00343C26 /* GameOfWhalesBundle.bundle in Frameworks */,
+				92615DD31EE98D35007F8E2D /* libGameOfWhales.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DF2A93D62628D14B9DF2CAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40CD76014D8EC750B9031176 /* Pods-test.debug.xcconfig */,
+				ECAA7F1EABE35FBDABC0E736 /* Pods-test.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3EBA129E20F4AE0800480702 /* nse */ = {
+			isa = PBXGroup;
+			children = (
+				3EBA129F20F4AE0800480702 /* NotificationService.h */,
+				3EBA12A020F4AE0800480702 /* NotificationService.m */,
+				3EBA12A220F4AE0800480702 /* Info.plist */,
+			);
+			path = nse;
+			sourceTree = "<group>";
+		};
+		565678251D996864008D309F = {
+			isa = PBXGroup;
+			children = (
+				927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */,
+				92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */,
+				5644E3C41EA694B1001C1E0A /* gow-logo-main.png */,
+				56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */,
+				565678301D996864008D309F /* test */,
+				3EBA129E20F4AE0800480702 /* nse */,
+				5656782F1D996864008D309F /* Products */,
+				56FDF0C51E9EA0A8007A5A91 /* Frameworks */,
+				3DF2A93D62628D14B9DF2CAE /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		5656782F1D996864008D309F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5656782E1D996864008D309F /* test.app */,
+				3EBA129D20F4AE0700480702 /* nse.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		565678301D996864008D309F /* test */ = {
+			isa = PBXGroup;
+			children = (
+				92DCEAAE1EE55F24004EC8EC /* swift */,
+				5644E3C01EA66611001C1E0A /* TestView.xib */,
+				56FDF0C41E9E9BA7007A5A91 /* test.entitlements */,
+				565678351D996864008D309F /* Main.storyboard */,
+				565678381D996864008D309F /* Assets.xcassets */,
+				5656783A1D996864008D309F /* LaunchScreen.storyboard */,
+				5656783D1D996864008D309F /* Info.plist */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		56FDF0C51E9EA0A8007A5A91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92615DD21EE98D35007F8E2D /* libGameOfWhales.a */,
+				92615DD01EE98C34007F8E2D /* libGameOfWhales.a */,
+				56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */,
+				92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */,
+				4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92DCEAAE1EE55F24004EC8EC /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				565678311D996864008D309F /* AppDelegate.swift */,
+				927568431EEFE070007AC7AE /* PlayerInfo.swift */,
+				92A866921EFA653900B593E8 /* MainView.swift */,
+				92A866941EFA676100B593E8 /* BankView.swift */,
+				92A866961EFA676F00B593E8 /* PlayerInfoView.swift */,
+				92E5CA332194298A007197D6 /* AdView.swift */,
+			);
+			name = swift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EBA129C20F4AE0700480702 /* nse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EBA12A620F4AE0800480702 /* Build configuration list for PBXNativeTarget "nse" */;
+			buildPhases = (
+				3EBA129920F4AE0700480702 /* Sources */,
+				3EBA129A20F4AE0700480702 /* Frameworks */,
+				3EBA129B20F4AE0700480702 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nse;
+			productName = nse;
+			productReference = 3EBA129D20F4AE0700480702 /* nse.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5656782D1D996864008D309F /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 565678401D996864008D309F /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				8581F03B5991C5CAA7D52580 /* [CP] Check Pods Manifest.lock */,
+				5656782A1D996864008D309F /* Sources */,
+				5656782B1D996864008D309F /* Frameworks */,
+				5656782C1D996864008D309F /* Resources */,
+				B83C2F2494DA27FBA9D6D971 /* [CP] Embed Pods Frameworks */,
+				2C6B090FAFA61BA19616EA24 /* [CP] Copy Pods Resources */,
+				92A378801EDC596800D7FAF5 /* Embed Frameworks */,
+				3EBA12A920F4AE0800480702 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EBA12A420F4AE0800480702 /* PBXTargetDependency */,
+			);
+			name = test;
+			productName = test;
+			productReference = 5656782E1D996864008D309F /* test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		565678261D996864008D309F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = GameOfWhales;
+				TargetAttributes = {
+					3EBA129C20F4AE0700480702 = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 2CF9M4J7ZH;
+						ProvisioningStyle = Automatic;
+					};
+					5656782D1D996864008D309F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2CF9M4J7ZH;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 565678291D996864008D309F /* Build configuration list for PBXProject "test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 565678251D996864008D309F;
+			productRefGroup = 5656782F1D996864008D309F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5656782D1D996864008D309F /* test */,
+				3EBA129C20F4AE0700480702 /* nse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EBA129B20F4AE0700480702 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5656782C1D996864008D309F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5656783C1D996864008D309F /* LaunchScreen.storyboard in Resources */,
+				56DCE3B11E0060DE00F1E18C /* GoogleService-Info.plist in Resources */,
+				92A4DDF0219EC1A500381D72 /* GameOfWhalesBundle.bundle in Resources */,
+				565678391D996864008D309F /* Assets.xcassets in Resources */,
+				5644E3C51EA694B1001C1E0A /* gow-logo-main.png in Resources */,
+				5644E3BE1EA66611001C1E0A /* TestView.xib in Resources */,
+				565678371D996864008D309F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C6B090FAFA61BA19616EA24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8581F03B5991C5CAA7D52580 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B83C2F2494DA27FBA9D6D971 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EBA129920F4AE0700480702 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EBA12A120F4AE0800480702 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5656782A1D996864008D309F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A866931EFA653900B593E8 /* MainView.swift in Sources */,
+				565678321D996864008D309F /* AppDelegate.swift in Sources */,
+				92A866971EFA676F00B593E8 /* PlayerInfoView.swift in Sources */,
+				92A866951EFA676100B593E8 /* BankView.swift in Sources */,
+				927568441EEFE070007AC7AE /* PlayerInfo.swift in Sources */,
+				92E5CA342194298A007197D6 /* AdView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EBA12A420F4AE0800480702 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EBA129C20F4AE0700480702 /* nse */;
+			targetProxy = 3EBA12A320F4AE0800480702 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5644E3C01EA66611001C1E0A /* TestView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5644E3C31EA66620001C1E0A /* en */,
+			);
+			name = TestView.xib;
+			sourceTree = "<group>";
+		};
+		565678351D996864008D309F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				565678361D996864008D309F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5656783A1D996864008D309F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5656783B1D996864008D309F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EBA12A720F4AE0800480702 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = nse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios.nse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EBA12A820F4AE0800480702 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = nse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios.nse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5656783E1D996864008D309F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5656783F1D996864008D309F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		565678411D996864008D309F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40CD76014D8EC750B9031176 /* Pods-test.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = test/test.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		565678421D996864008D309F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECAA7F1EABE35FBDABC0E736 /* Pods-test.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = test/test.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gameofwhales.native.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EBA12A620F4AE0800480702 /* Build configuration list for PBXNativeTarget "nse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EBA12A720F4AE0800480702 /* Debug */,
+				3EBA12A820F4AE0800480702 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		565678291D996864008D309F /* Build configuration list for PBXProject "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5656783E1D996864008D309F /* Debug */,
+				5656783F1D996864008D309F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		565678401D996864008D309F /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				565678411D996864008D309F /* Debug */,
+				565678421D996864008D309F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 565678261D996864008D309F /* Project object */;
+}

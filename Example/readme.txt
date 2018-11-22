@@ -1,3 +1,5 @@
-1) Add GoogleService-Info.plist to the project
+HOW TO CREATE FRAMEWORK
+https://github.com/jverkoey/iOS-Framework
 
-2) Add 'GWGameKey' value to info.plist
+CODE SIGNING
+https://stackoverflow.com/questions/30963294/creating-ios-osx-frameworks-is-it-necessary-to-codesign-them-before-distributin
