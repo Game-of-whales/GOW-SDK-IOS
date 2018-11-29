@@ -13,7 +13,7 @@ Download the latest sdk version from our server:
 
 ADDED
 
-* The supporting of ads was added.
+* The supporting of cross promotion ads was added.
 
 
 ### 2.0.15 (Sep 25, 2018)
@@ -341,7 +341,7 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 
-## Ads
+## Cross promotion ads
 
 > It's supported since version 2.0.20 of SDK for iOS.
 
@@ -624,7 +624,7 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
 
 
-## Ads
+## Cross promotion ads
 
 > It's supported since version 2.0.20 of SDK for iOS.
 
