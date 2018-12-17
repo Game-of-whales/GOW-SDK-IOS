@@ -4,9 +4,18 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.20/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.21/gameofwhales.zip)
 
 # Changelog
+
+
+### 2.0.21 (Dec 17, 2018)
+
+FIXED
+
+* The handling of errors was improved.
+* The selection of advertising (cross-promotion) images depending on the orientation of the device was fixed.
+* The repeating of cross-promotion ads after some minutes was fixed.
 
 
 ### 2.0.20 (Nov 20, 2018)
