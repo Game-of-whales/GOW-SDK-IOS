@@ -198,6 +198,10 @@ Add the following methods:
  {
  }
  
+ func futureSpecialOfferAppeared(_ specialOffer: GWSpecialOffer) 
+ {
+ }
+ 
  func onPushDelivered(_ offer:GWSpecialOffer?, camp: String, title:String, message:String)
  {
  }
@@ -460,6 +464,11 @@ Add the following methods:
 - (void)specialOfferDisappeared:(nonnull GWSpecialOffer *)specialOffer
 {
     
+}
+
+- (void)futureSpecialOfferAppeared:(nonnull GWSpecialOffer *)specialOffer
+{
+
 }
 
 - (void)onPushDelivered:(nullable GWSpecialOffer*) offer camp:(nonnull NSString *)camp title:(nonnull NSString*)title message:(nonnull NSString*)message
