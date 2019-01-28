@@ -409,7 +409,7 @@ else
     GW.loadAd()
 ```
 
-# Profile's properties
+## Profile's properties
 
 ### Step 18
 
@@ -724,7 +724,7 @@ else
 ```
 
 
-# Profile's properties
+## Profile's properties
 
 ### Step 18
 
