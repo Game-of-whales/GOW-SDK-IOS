@@ -4,9 +4,21 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.21/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.22/gameofwhales.zip)
 
 # Changelog
+
+
+### 2.0.22 (Jan 25, 2019)
+
+ADDED
+
+* The supporting of [future (anti-churn) special offers](https://www.gameofwhales.com/documentation/anti-churn-offers) were added.
+* The possibility of getting a profile's properties was added.
+
+FIXED
+
+* The issue with getting server time on 32-bit devices was fixed.
 
 
 ### 2.0.21 (Dec 17, 2018)
@@ -397,6 +409,29 @@ else
     GW.loadAd()
 ```
 
+## Profile's properties
+
+### Step 18
+
+You can get some profile's properties defined on **Game of Whales** side via the SDK.
+
+For example, you can get the profile's property `group` by using the following code:
+
+```swift
+let properties = GW.getProperties()
+if (properties["group"] != nil)
+    {
+        let group = properties.objectForKey("group")
+    }
+```
+
+You can also receive the profile's group by using the special method:
+
+```swift
+   let group = GW.getUserGroup()
+```
+
+
 
 # Objective-C
 
@@ -687,6 +722,30 @@ if ([GW IsAdLoaded])
 else
         [GW LoadAd];
 ```
+
+
+## Profile's properties
+
+### Step 18
+
+You can get some profile's properties defined on **Game of Whales** side via the SDK.
+
+For example, you can get the profile's property `group` by using the following code:
+
+```objc
+NSMutableDictionary * properties = [GW getProperties];
+if (properties[@"group"])
+    {
+        NSString* group = properties[@"group"];
+    }
+```
+
+You can also receive the profile's group by using the special method:
+
+```objc
+   NSString * group = [GW GetUserGroup];
+```
+
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-IOS/tree/master/Example).
