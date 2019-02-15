@@ -4,9 +4,13 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.22/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.23/gameofwhales.zip)
 
 # Changelog
+
+### 2.0.23 (Feb 15, 2019)
+
+* Minor fixes.
 
 
 ### 2.0.22 (Jan 25, 2019)
