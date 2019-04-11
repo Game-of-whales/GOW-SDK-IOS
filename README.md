@@ -343,18 +343,30 @@ For example:
 
 ### Step 14
 
-``converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+If you are going to use [AI offers](https://www.gameofwhales.com/documentation/ai-offers) functionality you need to send to **Game of Whales** information about players' game activity by using ``сonverting`` method. ``сonverting`` method should be called to show what exactly the player spent and what he got instead of spent resources. [Read more...](https://www.gameofwhales.com/documentation/ai-offers#aiData)
+
 
 For example:
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method to reflect this operation in **Game of Whales**:
 
-Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+
 ```swift
       GW.converting(["coins":-1000, "gas":-50, "bike_1":1], place: "bank")
 ```
 
-You can also use the following methods:
+Another sample: someone bought a main pack for $5. It was in-app purchase with _mainPack_ SKU. The pack included _100 coins_ and _1 bike_. In order to send the data that the player got _100 coins_ and _1 bike_ after the purchase of _mainPack_ to **Game of Whales**, the following ``сonverting`` method should be called:
 
-``consume`` - to buy items for game currency. For example:
+
+```swift
+      GW.converting(["bike": 1, "coin": 100, "mainPack": -1], place: "shop")
+```
+
+
+There are 2 additional methods that can be used instead of ```converting``` method:
+
+``consume`` - to show that a player spends a certain amount of one resource for the purchase of a quantity of another resource.
+
+For example:
 
 ```swift
     GW.consumeCurrency("coins", number:1000, sink:"gas", amount:50, place:"shop")
@@ -362,12 +374,15 @@ You can also use the following methods:
 It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 
 
-``acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+``acquire`` -  to show that a player acquires a certain amount of one resource and spends a quantity of another resource. The method can be used for _in-app_ and _in game_ items. It's important to call ``acquire`` method after ``InAppPurchased``.
 
 ```swift
     GW.acquireCurrency("coins", amount:1000, source:sku, number:1, place:"bank")
 ```
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
+
+``consume`` and ``acquire`` methods can be called when one resource is changed to another resource. In more complicated cases (for example, when one resource is spent for several types of resources) ``converting`` method should be called.
+
 
 
 ## Cross promotion ads
@@ -648,11 +663,12 @@ You can send additional data about your players by using the ``Profile`` method.
 
 ### Step 14
 
-``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+If you are going to use [AI offers](https://www.gameofwhales.com/documentation/ai-offers) functionality you need to send to **Game of Whales** information about players' game activity by using ``Converting`` method. ``Converting`` method should be called to show what exactly the player spent and what he got instead of spent resources. [Read more...](https://www.gameofwhales.com/documentation/ai-offers#aiData)
+
 
 For example:
 
-Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method to reflect this operation in **Game of Whales**:
 
 ```objc
         NSMutableDictionary *resources = [NSMutableDictionary dictionary];
@@ -662,9 +678,23 @@ Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the f
         [GW Converting:resources place:@"bank"]
 ```
 
-You can also use the following methods:
+Another sample: someone bought a main pack for $5. It was in-app purchase with _mainPack_ SKU. The pack included _100 coins_ and _1 bike_. In order to send the data that the player got _100 coins_ and _1 bike_ after the purchase of _mainPack_ to **Game of Whales**, the following ``Converting`` method should be called:
 
-``Consume`` - to buy items for game currency. For example:
+```objc
+        NSMutableDictionary *resources = [NSMutableDictionary dictionary];
+        resources[@"coin"] = 100;
+        resources[@"bike"] = 1;
+        resources[@"mainPack"] = @-1;
+        [GW Converting:resources place:@"shop"]
+```
+
+
+
+There are 2 additional methods that can be used instead of ```Converting``` method:
+
+``Consume`` - to show that a player spends a certain amount of one resource for the purchase of a quantity of another resource.
+
+For example:
 
 ```objc
     [GW ConsumeCurrency:@"coins" number:@1000 sink:@"gas" amount:@50 place:@"shop"];
@@ -673,12 +703,16 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 
 
 
-``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+``Acquire`` -  to show that a player acquires a certain amount of one resource and spends a quantity of another resource. The method can be used for _in-app_ and _in game_ items. It's important to call ``Acquire`` method after ``InAppPurchased``.
+
+For example:
 
 ```objc
     [GW AcquireCurrency:@"coins: amount:@1000 source:sku number:@1 place:@"bank];
 ```
 It means that someone has acquired 1000 "coins" for 1 "sku" in "bank".
+
+``Consume`` and ``Acquire`` methods can be called when one resource is changed to another resource. In more complicated cases (for example, when one resource is spent for several types of resources) ``Converting`` method should be called.
 
 
 ## Cross promotion ads
