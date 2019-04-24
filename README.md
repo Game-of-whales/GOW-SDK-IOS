@@ -652,10 +652,10 @@ You can send additional data about your players by using the ``Profile`` method.
  
  ```objc
      NSMutableDictionary *changes = [NSMutableDictionary dictionary];
-     message[@"coins"] = @1000;
-     message[@"class"] = @"wizard";
-     message[@"gender"] = @TRUE;
-     message[@"location"] = @"A";
+     changes[@"coins"] = @1000;
+     changes[@"class"] = @"wizard";
+     changes[@"gender"] = @TRUE;
+     changes[@"location"] = @"A";
      [GW Profile:changes];
  ```
 
