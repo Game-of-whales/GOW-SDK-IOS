@@ -9,7 +9,7 @@ Download the latest sdk version from our server:
 # Changelog
 
 
-### 2.0.24 (Jun 15, 2019)
+### 2.0.24 (Jun 19, 2019)
 
 ADDED
 
