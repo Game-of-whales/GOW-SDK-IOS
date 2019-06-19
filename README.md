@@ -4,9 +4,18 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.23/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.24/gameofwhales.zip)
 
 # Changelog
+
+
+### 2.0.24 (Jun 15, 2019)
+
+ADDED
+
+* `onInitialized` callback was added. It should be used to get information that the SDK has been initialized.
+* `Purchase` method was added to register purchases without verification.
+
 
 ### 2.0.23 (Feb 15, 2019)
 
