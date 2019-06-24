@@ -155,6 +155,15 @@ Add ```GWGameKey``` parameter to ```info.plist``` and specify your [game key](ht
 ## SWIFT
 
 ### Step 3
+
+Subscribe to ```onInitialized``` if you want to get information that the SDK has been initialized.
+
+```swift
+func onInitialized() 
+ {
+ }
+```
+
 Call ```initialize``` method when you launch your app.
 
 ```swift
@@ -170,6 +179,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 ## Purchases
 
+**Purchases with verification on GOW server side**
+
 >Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
@@ -181,6 +192,24 @@ Register a purchase with ``purchaseTransaction`` method.
        if t.transactionState == SKPaymentTransactionState.purchased
            GW.purchaseTransaction(t, product: product!);
 ```
+
+**Purchase without verification on GOW server side**
+
+>The method is available since v.2.0.24 SDK version.
+
+In order to send information about purchases without verification on **Game of Whales** side, call ```purchase``` method. For example:
+
+```swift
+   let productID = "product_10";
+   let currency = "USD";
+   let price = 1.99;
+
+   GW.purchase(productID, currency, price * 100);
+```
+
+>Pay attention that all purchases received through ```purchase``` method (including refunds, restores, cheater's purchases) will increase the stats. So in order to have correct stats, a game developer should verify purchases on the game side and send the data only about legal purchases to **Game of Whales** system.
+
+
 
 ## Special Offers
 
@@ -464,6 +493,16 @@ You can also receive the profile's group by using the special method:
 # Objective-C
 
 ### Step 3
+
+Subscribe to ```onInitialized``` if you want to get information that the SDK has been initialized.
+
+```objective-c
+- (void)onInitialized
+{
+
+}
+```
+
 Call ```initialize``` method when you launch your app.
 
 ```objective-c
@@ -477,6 +516,8 @@ Call ```initialize``` method when you launch your app.
 
 ## Purchases
 
+**Purchase with verification on GOW server side**
+
 >Check that _iOS Bundle Identifier_ (for iOS app) has been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 
 ### Step 4 (only if you use in-app purchases)
@@ -489,6 +530,24 @@ Register a purchase with ``purchaseTransaction`` method.
                  [GW PurchaseTransaction:t product:product];
 }
 ```
+
+**Purchase without verification on GOW server side**
+
+>The method is available since v.2.0.24 SDK version.
+
+In order to send information about purchases without verification on **Game of Whales** side, call ```Purchase``` method. For example:
+
+```objective-c
+   NSString *product = @"product_10";
+   NSString *currency = @"USD";
+   double price = 1.99;
+    
+   [GW Purchase:product :currency :price];
+```
+
+>Pay attention that all purchases received through ```Purchase``` method (including refunds, restores, cheater's purchases) will increase the stats. So in order to have correct stats, a game developer should verify purchases on the game side and send the data only about legal purchases to **Game of Whales** system.
+
+
 
 ## Special Offers
 
