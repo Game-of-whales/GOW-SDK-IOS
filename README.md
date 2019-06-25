@@ -177,6 +177,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
    GW.initialize( launchOptions, false);
 
 ```
+
+
+>**GDPR NOTE:** By default, the SDK uses advertisement ID (IDFA) as a user ID to send events to **Game of Whales** server. In order to work in a non-personal mode when a random value will be used as a user ID, the SDK should be initialized as follows:
+
+```swift
+        let nonPersonal = true;
+        let debugLog = true;
+        GW.initialize(withGameKey: "YOU_GAME_KEY", launchOptions, debugLog, nonPersonal);
+```
+  
 ## Purchases
 
 **Purchases with verification on GOW server side**
@@ -512,6 +522,14 @@ Call ```initialize``` method when you launch your app.
     ...
     BOOL debugLog = false;
     [GW initialize:launchOptions :debugLog];
+```
+
+> **GDPR NOTE:** By default, the SDK uses advertisement ID (IDFA) as a user ID to send events to **Game of Whales** server. In order to work in a non-personal mode when a random value will be used as a user ID, the SDK should be initialized as follows:
+
+```objc
+    BOOL nonPersonal = TRUE;
+    BOOL debugLog = TRUE;
+    [GW Initialize:launchOptions :debugLog :nonPersonal];
 ```
 
 ## Purchases
