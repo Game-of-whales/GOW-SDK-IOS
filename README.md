@@ -4,9 +4,16 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.24/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.26/gameofwhales.zip)
 
 # Changelog
+
+
+### 2.0.26 (Jun 25, 2019)
+
+ADDED
+* GDPR support: the non-personal mode was added. 
+
 
 
 ### 2.0.24 (Jun 19, 2019)
