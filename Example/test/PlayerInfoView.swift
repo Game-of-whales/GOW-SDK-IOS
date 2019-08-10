@@ -56,7 +56,7 @@ class PlayerInfoView : UIViewController
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimerUpdate), userInfo: nil, repeats: true)
     }
     
-    func onTimerUpdate()
+    @objc func onTimerUpdate()
     {
         updateButtons();
     }
@@ -122,7 +122,7 @@ class PlayerInfoView : UIViewController
         updateViewParameters();
     }
     
-    func updateViews(notification: NSNotification)
+    @objc func updateViews(notification: NSNotification)
     {
          updateViewParameters()
     }

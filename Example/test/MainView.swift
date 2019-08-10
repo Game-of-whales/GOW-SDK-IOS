@@ -16,8 +16,9 @@ import UIKit
 class MainView : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     
-    var pages: NSArray = ["Bank", "PlayerInfo", "Ads"];
-    var index = 0;
+    var pages: NSArray = ["Bank", "PlayerInfo", "Ads", "Broadcast", "Experiment"];
+    var pagecount: Int = 5;
+    var index: Int = 2;
     
     
     
@@ -28,12 +29,12 @@ class MainView : UIPageViewController, UIPageViewControllerDataSource, UIPageVie
         self.dataSource = self
         self.delegate = self
         
-        self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        self.setViewControllers([getViewControllerAtIndex(index)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
     
     func getViewControllerAtIndex(_ index: NSInteger) -> UIViewController!
     {
-        if index == 1
+        if index == 0
         {
              return self.storyboard?.instantiateViewController(withIdentifier: "BankView") as! BankView;
         }
@@ -43,10 +44,21 @@ class MainView : UIPageViewController, UIPageViewControllerDataSource, UIPageVie
             return self.storyboard?.instantiateViewController(withIdentifier: "PlayerInfoView") as! PlayerInfoView;
         }
         
-        if index == 0
+        if index == 2
         {
             return self.storyboard?.instantiateViewController(withIdentifier: "AdView") as! AdView;
         }
+        
+        if index == 3
+        {
+            return self.storyboard?.instantiateViewController(withIdentifier: "BroadcastView") as! BroadcastView;
+        }
+        
+        if index == 4
+        {
+            return self.storyboard?.instantiateViewController(withIdentifier: "ExperimentView") as! ExperimentView;
+        }
+        
 
         return nil;
     }
@@ -54,30 +66,37 @@ class MainView : UIPageViewController, UIPageViewControllerDataSource, UIPageVie
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
-        let id = NSStringFromClass(viewController.classForCoder)
-        let index = self.pages.index(of: id)
+        //let id = NSStringFromClass(viewController.classForCoder)
+        //let index = self.pages.index(of: id)
         
-        if (index == 0)
+        if (index > 0)
         {
-            return nil;
+            index = index - 1
+        }
+        else
+        {
+            index = pagecount - 1;
         }
         
-        self.index = self.index - 1
+        
         return self.getViewControllerAtIndex(index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
-        let id = NSStringFromClass(viewController.classForCoder)
-        let index = self.pages.index(of: id)
+        //let id = NSStringFromClass(viewController.classForCoder)
         
-        if (index == pages.count - 1)
+        
+        
+        if (self.index < pagecount)
         {
-            return nil;
+            index = index + 1
         }
-        
-        self.index = self.index + 1
-        return self.getViewControllerAtIndex(self.index)
+        else
+        {
+            index = 0;
+        }
+        return self.getViewControllerAtIndex(index)
     }
     
 }

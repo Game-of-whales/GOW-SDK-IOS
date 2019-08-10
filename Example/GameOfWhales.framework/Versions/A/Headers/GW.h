@@ -46,8 +46,13 @@ FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_CLICKED;
  @param debug BOOL YES - if debug mode
  */
 + (void)InitializeWithGameKey:(nonnull NSString *)gameKey
-        :(nullable NSDictionary *)launchOptions
-        :(BOOL)debug;
+                             :(nullable NSDictionary *)launchOptions
+                             :(BOOL)debug
+                             :(BOOL)nonPersonal;
+
++ (void)InitializeWithGameKey:(nonnull NSString *)gameKey
+                             :(nullable NSDictionary *)launchOptions
+                             :(BOOL)debug;
 
 /*!
  @brief Initialize GameOfWhales SDK method with default game key.
@@ -55,7 +60,11 @@ FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_CLICKED;
  @param debug BOOL YES - if debug mode
  */
 + (void)Initialize:(nullable NSDictionary *)launchOptions
-        :(BOOL)debug;
+                  :(BOOL)debug
+                  :(BOOL)nonPersonal;
+
++ (void)Initialize:(nullable NSDictionary *)launchOptions
+                  :(BOOL)debug;
 
 /*!
      Load promo adversting
@@ -200,6 +209,14 @@ FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_CLICKED;
         :(nonnull NSString *)stacktrace;
 
 /*!
+ @param sku NSString product identifier
+ @param currency NSString transaction currency
+ @param price double product price
+ */
++(void)Purchase:(nonnull NSString*)product: (nonnull NSString*)currency: (double)price;
+
+
+/*!
  @brief Register in app purchase
  @param sku NSString product identifier
  @param price double product price
@@ -238,6 +255,10 @@ FOUNDATION_EXPORT NSString *_Nonnull const GW_AD_CLICKED;
 +(void)Internal_onAdClosed;
 +(void)AdEvent:(NSString *)camp action:(NSString*)action;
 +(void)ExtAdEvent:(NSString *)platform revenue:(NSNumber *)revenue type:(NSString*)type unitType:(NSString*)unitType;
+
++(GWExperiment*)GetCurrentExperiment;
++(void) SetCanExperimentStartDelay:(BOOL) value;
++(void) SetDelayedExperimentStartAnswer:(BOOL) value;
 @end
 
 

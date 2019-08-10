@@ -16,6 +16,34 @@ import GameOfWhales
 
 class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaymentTransactionObserver
 {
+    func futureSpecialOfferAppeared(_ specialOffer: GWSpecialOffer) {
+        
+    }
+    
+    func onAdLoaded() {
+        
+    }
+    
+    func onAdLoadFailed() {
+        
+    }
+    
+    func onAdClosed() {
+        
+    }
+    
+    func onInitialized() {
+        
+    }
+    
+    func canStart(_ experiment: GWExperiment) -> Bool {
+        return false;
+    }
+    
+    func onExperimentEnded(_ experiment: GWExperiment) {
+        
+    }
+    
     
     var products: Dictionary<String, SKProduct> = Dictionary();
     
@@ -61,7 +89,7 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
         updateButton(button: sub2Button!, productIdentifier: "sub_month_graceno_2");
     }
    
-    func onTimerUpdate()
+    @objc func onTimerUpdate()
     {
         updateButtons();
         
@@ -168,22 +196,7 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
         
         NSLog("BankView: Special offer appeared for %@", productIdentifier);
         updateButtons()
-    }
-    
-    func futureSpecialOfferAppeared(_ specialOffer: GWSpecialOffer) {
-        let productIdentifier = specialOffer.product;
-        NSLog("BankView: Special offer appeared for %@", productIdentifier);
-    }
-    
-    func onAdClosed() {
-        
-    }
-    
-    func onAdLoaded() {
-    }
-    
-    func onAdLoadFailed() {
-        
+
     }
     
     func onPurchaseVerified(_ transactionID: String, state: String) {
@@ -246,7 +259,7 @@ class BankView : UIViewController, SKProductsRequestDelegate, GWDelegate, SKPaym
         let p = products[productIdentifier];
         //let so = GW.shared().specialOffer(for: productIdentifier);
         let payment = SKMutablePayment(product: p!)
-        payment.simulatesAskToBuyInSandbox = true
+        //payment.simulatesAskToBuyInSandbox = true
         SKPaymentQueue.default().add(payment)
     }
     

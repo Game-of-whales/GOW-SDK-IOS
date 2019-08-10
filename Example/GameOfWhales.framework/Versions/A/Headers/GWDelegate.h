@@ -14,6 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GWSpecialOffer.h"
+#import "GWExperiment.h"
 
 @class GWSpecialOffer;
 
@@ -59,6 +60,11 @@
 - (void)onAdLoaded;
 - (void)onAdLoadFailed;
 - (void)onAdClosed;
+
+- (void)onInitialized;
+
+- (BOOL) CanStartExperiment:(nonnull GWExperiment*) experiment;
+- (void) OnExperimentEnded:(nonnull GWExperiment*) experiment;
 @end
 
 #endif

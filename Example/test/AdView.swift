@@ -11,6 +11,16 @@ import GameOfWhales
 
 class AdView : UIViewController, GWDelegate
 {
+    func canStart(_ experiment: GWExperiment) -> Bool {
+        return false;
+    }
+    
+    func onExperimentEnded(_ experiment: GWExperiment) {
+        
+    }
+    
+   
+    
     @IBOutlet var adstate:UILabel!
     @IBOutlet var foparTitle:UILabel!
     @IBOutlet var adload:UIButton!
@@ -67,6 +77,7 @@ class AdView : UIViewController, GWDelegate
             catch {
                  futureOffersList.text = "Something wrong! And ErroR!"
             }
+            
         }
     }
     
@@ -97,6 +108,10 @@ class AdView : UIViewController, GWDelegate
     
     func specialOfferDisappeared(_ specialOffer: GWSpecialOffer) {
         
+    }
+    
+    func onInitialized() {
+        NSLog("SDK INITIALIZED");
     }
     
     func futureSpecialOfferAppeared(_ specialOffer: GWSpecialOffer) {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3EBA12A120F4AE0800480702 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA12A020F4AE0800480702 /* NotificationService.m */; };
 		3EBA12A520F4AE0800480702 /* nse.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3EBA129D20F4AE0700480702 /* nse.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		41FBA80F22E1CF5700C9D583 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBA80E22E1CF5700C9D583 /* AdView.swift */; };
+		41FBA81122E1CF6500C9D583 /* BroadcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBA81022E1CF6500C9D583 /* BroadcastView.swift */; };
+		41FBA81322E5A60E00C9D583 /* ExperimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FBA81222E5A60E00C9D583 /* ExperimentView.swift */; };
 		5644E3BE1EA66611001C1E0A /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5644E3C01EA66611001C1E0A /* TestView.xib */; };
 		5644E3C51EA694B1001C1E0A /* gow-logo-main.png in Resources */ = {isa = PBXBuildFile; fileRef = 5644E3C41EA694B1001C1E0A /* gow-logo-main.png */; };
 		565678321D996864008D309F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565678311D996864008D309F /* AppDelegate.swift */; };
@@ -18,15 +21,13 @@
 		56DCE3B11E0060DE00F1E18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */; };
 		56FDF0C71E9EA0A8007A5A91 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */; };
 		8F0356818163A564C17B7F2E /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */; };
-		92074BAC2194797D00343C26 /* GameOfWhalesBundle.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */; };
 		92615DD31EE98D35007F8E2D /* libGameOfWhales.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92615DD21EE98D35007F8E2D /* libGameOfWhales.a */; };
 		927568441EEFE070007AC7AE /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927568431EEFE070007AC7AE /* PlayerInfo.swift */; };
-		927EF25321A6DF8800CC5F5A /* GameOfWhales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */; };
-		92A4DDF0219EC1A500381D72 /* GameOfWhalesBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */; };
 		92A866931EFA653900B593E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866921EFA653900B593E8 /* MainView.swift */; };
 		92A866951EFA676100B593E8 /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866941EFA676100B593E8 /* BankView.swift */; };
 		92A866971EFA676F00B593E8 /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A866961EFA676F00B593E8 /* PlayerInfoView.swift */; };
-		92E5CA342194298A007197D6 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E5CA332194298A007197D6 /* AdView.swift */; };
+		92DCEAB41EE55F4E004EC8EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DCEAB11EE55F4E004EC8EC /* AppDelegate.m */; };
+		92DCEAB51EE55F4E004EC8EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DCEAB31EE55F4E004EC8EC /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,9 @@
 		3EBA12A020F4AE0800480702 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		3EBA12A220F4AE0800480702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40CD76014D8EC750B9031176 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
+		41FBA80E22E1CF5700C9D583 /* AdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		41FBA81022E1CF6500C9D583 /* BroadcastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastView.swift; sourceTree = "<group>"; };
+		41FBA81222E5A60E00C9D583 /* ExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentView.swift; sourceTree = "<group>"; };
 		4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5644E3C31EA66620001C1E0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TestView.xib; sourceTree = "<group>"; };
 		5644E3C41EA694B1001C1E0A /* gow-logo-main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gow-logo-main.png"; sourceTree = "<group>"; };
@@ -81,16 +85,16 @@
 		56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56FDF0C41E9E9BA7007A5A91 /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 		56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = GameOfWhalesBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		92615DD01EE98C34007F8E2D /* libGameOfWhales.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGameOfWhales.a; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphonesimulator/libGameOfWhales.a"; sourceTree = "<group>"; };
 		92615DD21EE98D35007F8E2D /* libGameOfWhales.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGameOfWhales.a; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphoneos/libGameOfWhales.a"; sourceTree = "<group>"; };
 		927568431EEFE070007AC7AE /* PlayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
-		927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GameOfWhales.framework; sourceTree = "<group>"; };
-		92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GameOfWhalesBundle.bundle; path = "../../../../Library/Developer/Xcode/DerivedData/test-chqssgsjjrtnjqbprdoeuqvkuytq/Build/Products/Debug-iphoneos/GameOfWhalesBundle.bundle"; sourceTree = "<group>"; };
 		92A866921EFA653900B593E8 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		92A866941EFA676100B593E8 /* BankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
 		92A866961EFA676F00B593E8 /* PlayerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
-		92E5CA332194298A007197D6 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		92DCEAB01EE55F4E004EC8EC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92DCEAB11EE55F4E004EC8EC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92DCEAB21EE55F4E004EC8EC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92DCEAB31EE55F4E004EC8EC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECAA7F1EABE35FBDABC0E736 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +112,6 @@
 			files = (
 				56FDF0C71E9EA0A8007A5A91 /* StoreKit.framework in Frameworks */,
 				8F0356818163A564C17B7F2E /* Pods_test.framework in Frameworks */,
-				927EF25321A6DF8800CC5F5A /* GameOfWhales.framework in Frameworks */,
-				92074BAC2194797D00343C26 /* GameOfWhalesBundle.bundle in Frameworks */,
 				92615DD31EE98D35007F8E2D /* libGameOfWhales.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +141,6 @@
 		565678251D996864008D309F = {
 			isa = PBXGroup;
 			children = (
-				927EF25221A6DF8700CC5F5A /* GameOfWhales.framework */,
-				92A4DDEF219EC1A400381D72 /* GameOfWhalesBundle.bundle */,
 				5644E3C41EA694B1001C1E0A /* gow-logo-main.png */,
 				56DCE3B01E0060DE00F1E18C /* GoogleService-Info.plist */,
 				565678301D996864008D309F /* test */,
@@ -163,6 +163,7 @@
 		565678301D996864008D309F /* test */ = {
 			isa = PBXGroup;
 			children = (
+				92DCEAAF1EE55F30004EC8EC /* objc */,
 				92DCEAAE1EE55F24004EC8EC /* swift */,
 				5644E3C01EA66611001C1E0A /* TestView.xib */,
 				56FDF0C41E9E9BA7007A5A91 /* test.entitlements */,
@@ -180,7 +181,6 @@
 				92615DD21EE98D35007F8E2D /* libGameOfWhales.a */,
 				92615DD01EE98C34007F8E2D /* libGameOfWhales.a */,
 				56FDF0C61E9EA0A8007A5A91 /* StoreKit.framework */,
-				92074BAD2194797D00343C26 /* GameOfWhalesBundle.bundle */,
 				4A318E25AB2ADFFED03CEFA5 /* Pods_test.framework */,
 			);
 			name = Frameworks;
@@ -194,9 +194,22 @@
 				92A866921EFA653900B593E8 /* MainView.swift */,
 				92A866941EFA676100B593E8 /* BankView.swift */,
 				92A866961EFA676F00B593E8 /* PlayerInfoView.swift */,
-				92E5CA332194298A007197D6 /* AdView.swift */,
+				41FBA80E22E1CF5700C9D583 /* AdView.swift */,
+				41FBA81022E1CF6500C9D583 /* BroadcastView.swift */,
+				41FBA81222E5A60E00C9D583 /* ExperimentView.swift */,
 			);
 			name = swift;
+			sourceTree = "<group>";
+		};
+		92DCEAAF1EE55F30004EC8EC /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				92DCEAB01EE55F4E004EC8EC /* AppDelegate.h */,
+				92DCEAB11EE55F4E004EC8EC /* AppDelegate.m */,
+				92DCEAB21EE55F4E004EC8EC /* ViewController.h */,
+				92DCEAB31EE55F4E004EC8EC /* ViewController.m */,
+			);
+			name = objc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +296,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -311,7 +325,6 @@
 			files = (
 				5656783C1D996864008D309F /* LaunchScreen.storyboard in Resources */,
 				56DCE3B11E0060DE00F1E18C /* GoogleService-Info.plist in Resources */,
-				92A4DDF0219EC1A500381D72 /* GameOfWhalesBundle.bundle in Resources */,
 				565678391D996864008D309F /* Assets.xcassets in Resources */,
 				5644E3C51EA694B1001C1E0A /* gow-logo-main.png in Resources */,
 				5644E3BE1EA66611001C1E0A /* TestView.xib in Resources */,
@@ -385,9 +398,13 @@
 				92A866931EFA653900B593E8 /* MainView.swift in Sources */,
 				565678321D996864008D309F /* AppDelegate.swift in Sources */,
 				92A866971EFA676F00B593E8 /* PlayerInfoView.swift in Sources */,
+				41FBA81122E1CF6500C9D583 /* BroadcastView.swift in Sources */,
 				92A866951EFA676100B593E8 /* BankView.swift in Sources */,
 				927568441EEFE070007AC7AE /* PlayerInfo.swift in Sources */,
-				92E5CA342194298A007197D6 /* AdView.swift in Sources */,
+				92DCEAB51EE55F4E004EC8EC /* ViewController.m in Sources */,
+				92DCEAB41EE55F4E004EC8EC /* AppDelegate.m in Sources */,
+				41FBA80F22E1CF5700C9D583 /* AdView.swift in Sources */,
+				41FBA81322E5A60E00C9D583 /* ExperimentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,10 +617,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -611,7 +624,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -625,10 +638,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CF9M4J7ZH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -636,7 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

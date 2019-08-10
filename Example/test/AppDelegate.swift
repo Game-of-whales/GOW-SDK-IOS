@@ -19,16 +19,30 @@ extension Notification.Name {
     static let FIRRemoteMessageReceived = Notification.Name("FIRRemoteMessageReceived")
 }
 
+struct ExperimentPayload: Decodable {
+    let ignore: Bool
+}
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FIRMessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FIRMessagingDelegate, GWDelegate {
+    
+    static var experimentString:String = "nothing";
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         NSLog("GOW.Example: didFinishLaunchingWithOptions %@", launchOptions ?? "");
-        let gamekey = your_gamekey_there;
-        GW.initialize(withGameKey: gamekey, launchOptions, true);
+        let nonPersonal = false;
+        let debugLog = true;
+        
+        
+        GW.initialize(withGameKey: "585026b7f365603dd4e70d4d", launchOptions, debugLog, nonPersonal);
+        
+        GW.add(self);
+        //GW.initialize(launchOptions, true);
+
+        
             if #available(iOS 10.0, *) {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
                 { (granted, error) in
@@ -50,6 +64,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FIRMessagingDelegate {
         NSLog("GOW.Example: transactions count = %@", SKPaymentQueue.default().transactions.count);
         
         SKPaymentQueue.default().restoreCompletedTransactions();
+        
+        let exp = GW.getCurrentExperiment();
+        
+        if (exp != nil)
+        {
+            AppDelegate.experimentString = "ACTIVE: " + exp!.save();
+        }
+        
+        //GW.getCur
+
+        /*FIRMessaging.messaging().remoteMessageDelegate = self
+        
+        FIRApp.configure()
+        
+        firConnect()*/
+        
+        //GW.setPushNotificationsEnable(true);
 
         return true
     }
@@ -60,7 +91,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FIRMessagingDelegate {
     }
 
     func firConnect() {
-     
+        /*let token = FIRInstanceID.instanceID().token();
+        
+        if (token == nil)
+        {
+            print("GOW.Example: firConnect token is null")
+            return;
+        }
+        
+        FIRMessaging.messaging().disconnect();
+        
+        FIRMessaging.messaging().connect { (error:Error?) in
+            if ((error) != nil) {
+                print("GOW.Example: Unable to connect to FCM.", error ?? "")
+            } else {
+                print("GOW.Example: Connected to FCM")
+            }
+        };
+        
+        GW.shared().registerDeviceToken(with: token!, provider:GW_PROVIDER_FCM);*/
     }
     
         
@@ -99,7 +148,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FIRMessagingDelegate {
         GW.receivedRemoteNotification(userInfo, with: application, fetchCompletionHandler: completionHandler); 
     }
     
+    static func GetExperimentString() -> String {
+        return experimentString;
+    }
     
+    //GOW DELEGATE
+    func specialOfferAppeared(_ specialOffer: GWSpecialOffer) {
+        
+    }
+    
+    func specialOfferDisappeared(_ specialOffer: GWSpecialOffer) {
+        
+    }
+    
+    func futureSpecialOfferAppeared(_ specialOffer: GWSpecialOffer) {
+        
+    }
+    
+    func onPushDelivered(_ specialOffer: GWSpecialOffer?, camp: String, title: String, message: String) {
+        
+    }
+    
+    func onPurchaseVerified(_ transactionID: String, state: String) {
+        
+    }
+    
+    func onAdLoaded() {
+        
+    }
+    
+    func onAdLoadFailed() {
+        
+    }
+    
+    func onAdClosed() {
+        
+    }
+    
+    func onInitialized() {
+        
+    }
+    
+    func canStart(_ experiment: GWExperiment) -> Bool {
+        
+        let data = experiment.payload.data(using: .utf8);
+        
+        let payload = try? JSONDecoder().decode(ExperimentPayload.self, from: data!);
+        
+        if (payload != nil && payload!.ignore)
+        {
+            AppDelegate.experimentString = "IGNORED: " + experiment.save();
+            return false;
+        }
+        
+        AppDelegate.experimentString = "STARTED: " + experiment.save();
+        return true;
+    }
+    
+    func onExperimentEnded(_ experiment: GWExperiment) {
+        AppDelegate.experimentString = "ENDED: " + experiment.save();
+    }
 }
 
 

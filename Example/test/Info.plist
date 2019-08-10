@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.gameofwhales.native.ios</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>2.0.13</string>
 	<key>CFBundleVersion</key>
-	<string>150</string>
+	<string>209</string>
 	<key>GWGameKey</key>
 	<string>58ff3e2e30bb6d070389ef0f</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -31,8 +31,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>UIApplicationExitsOnSuspend</key>
-	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
