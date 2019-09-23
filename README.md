@@ -512,6 +512,33 @@ You can also receive the profile's group by using the special method:
 ```
 
 
+## A/B testing (experiments)
+
+> It's supported since version 2.0.29 of SDK for iOS.
+
+### Step 19
+
+In order to start working with experiments, it's needed to add some methods: 
+
+In order to confirm that the experiment payload settings have been applied and the player should take part in the experiment, it's needed to return _true_:
+       
+```swift
+    func canStart(_ experiment: GWExperiment) -> Bool {
+	     //Read experiment.payload, apply changes for experiment and return True if changes were applied
+	   
+      return true;
+    }
+ ```
+
+When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
+
+```swift
+    func onExperimentEnded(_ experiment: GWExperiment) {
+	     //Disable experiment changes or keep them
+    }
+
+
+
 
 # Objective-C
 
@@ -880,6 +907,34 @@ You can also receive the profile's group by using the special method:
 
 ```objc
    NSString * group = [GW GetUserGroup];
+```
+
+## A/B testing (experiments)
+
+> It's supported since version 2.0.29 of SDK for iOS.
+
+### Step 19
+
+In order to start working with experiments, it's needed to add some methods: 
+
+In order to confirm that the experiment payload settings have been applied and the player should take part in the experiment, it's needed to return  true:
+
+```objc   
+   - (BOOL) CanStartExperiment:(nonnull GWExperiment*) experiment
+     {
+	       //Read experiment.payload, apply changes for experiment and return True if changes were applied
+	  
+        return true;
+     }
+ ```
+
+When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
+
+```objc 
+   - (void) OnExperimentEnded:(nonnull GWExperiment*) experiment
+   {
+	      //Disable experiment changes or keep them
+   }
 ```
 
 
