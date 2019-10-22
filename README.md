@@ -4,21 +4,28 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.29/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.32/gameofwhales.zip)
 
 # Changelog
 
+### 2.0.32 (Oct 22, 2019)
+
+ADDED
+
+* [`onConnected` callback](https://www.gameofwhales.com/documentation/swift#init) was added. 
 
 
 ### 2.0.29 (Sep 23, 2019)
 
 ADDED
+
 * Supporting of ["A/B Testing"](https://www.gameofwhales.com/documentation/ab-testing) was added. 
 
 
 ### 2.0.26 (Jun 25, 2019)
 
 ADDED
+
 * GDPR support: the non-personal mode was added. 
 
 
@@ -174,8 +181,18 @@ Subscribe to ```onInitialized``` if you want to get information that the SDK has
 
 ```swift
 func onInitialized() 
- {
- }
+} 
+}
+```
+
+Subscribe to ```onConnected```. ```onConnected``` is called after the GOW server response with `dataReceived`: `true`. If there was no response from the GOW server, there was an error during the request to the server or the game is offline, `dataReceived` is `false`.
+
+> ```onConnected``` callback is supported since 2.0.32 version of SDK.
+
+```swift
+func onConnected(_ dataReceived: Bool)
+{
+}
 ```
 
 Call ```initialize``` method when you launch your app.
@@ -530,6 +547,9 @@ In order to confirm that the experiment payload settings have been applied and t
     }
  ```
 
+In order to check if there is an experiment at the start of the application, subscribe to `onConnected` callback (see _Step 3_). If the experiment exists, `canStart` will be called before `onConnected`.
+
+
 When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
 
 ```swift
@@ -552,6 +572,17 @@ Subscribe to ```onInitialized``` if you want to get information that the SDK has
 
 }
 ```
+
+Subscribe to ```onConnected```. ```onConnected``` is called after the GOW server response with `dataReceived`: `true`. If there was no response from the GOW server, there was an error during the request to the server or the game is offline, `dataReceived` is `false`.
+
+> ```onConnected``` callback is supported since 2.0.32 version of SDK.
+
+```objective-c
+- (void)onConnected:(BOOL) dataReceived
+{
+}
+```	
+
 
 Call ```initialize``` method when you launch your app.
 
@@ -927,6 +958,10 @@ In order to confirm that the experiment payload settings have been applied and t
         return true;
      }
  ```
+
+
+In order to check if there is an experiment at the start of the application, subscribe to `onConnected` callback (see _Step 3_). If the experiment exists, `CanStartExperiment` will be called before `onConnected`.
+
 
 When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
 
