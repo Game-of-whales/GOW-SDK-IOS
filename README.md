@@ -4,14 +4,28 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.26/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.32/gameofwhales.zip)
 
 # Changelog
+
+### 2.0.32 (Oct 22, 2019)
+
+ADDED
+
+* [`onConnected` callback](https://www.gameofwhales.com/documentation/swift#init) was added. 
+
+
+### 2.0.29 (Sep 23, 2019)
+
+ADDED
+
+* Supporting of ["A/B Testing"](https://www.gameofwhales.com/documentation/ab-testing) was added. 
 
 
 ### 2.0.26 (Jun 25, 2019)
 
 ADDED
+
 * GDPR support: the non-personal mode was added. 
 
 
@@ -167,8 +181,18 @@ Subscribe to ```onInitialized``` if you want to get information that the SDK has
 
 ```swift
 func onInitialized() 
- {
- }
+} 
+}
+```
+
+Subscribe to ```onConnected```. ```onConnected``` is called after the GOW server response with `dataReceived`: `true`. If there was no response from the GOW server, there was an error during the request to the server or the game is offline, `dataReceived` is `false`.
+
+> ```onConnected``` callback is supported since 2.0.32 version of SDK.
+
+```swift
+func onConnected(_ dataReceived: Bool)
+{
+}
 ```
 
 Call ```initialize``` method when you launch your app.
@@ -382,7 +406,6 @@ In order to check notifications implementation send [a test notification](http:/
 
 You can send additional data about your players by using the ``profile`` method. ``profile`` method should be called if key parameters of your app or a player have changed.
 
->In order to work with AI offers you should send at least 5 number-type properties and at least one progress based parameter.
 
 >If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
 
@@ -506,6 +529,36 @@ You can also receive the profile's group by using the special method:
 ```
 
 
+## A/B testing (experiments)
+
+> It's supported since version 2.0.29 of SDK for iOS.
+
+### Step 19
+
+In order to start working with experiments, it's needed to add some methods: 
+
+In order to confirm that the experiment payload settings have been applied and the player should take part in the experiment, it's needed to return _true_:
+       
+```swift
+    func canStart(_ experiment: GWExperiment) -> Bool {
+	     //Read experiment.payload, apply changes for experiment and return True if changes were applied
+	   
+      return true;
+    }
+ ```
+
+In order to check if there is an experiment at the start of the application, subscribe to `onConnected` callback (see _Step 3_). If the experiment exists, `canStart` will be called before `onConnected`.
+
+
+When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
+
+```swift
+    func onExperimentEnded(_ experiment: GWExperiment) {
+	     //Disable experiment changes or keep them
+    }
+
+
+
 
 # Objective-C
 
@@ -519,6 +572,17 @@ Subscribe to ```onInitialized``` if you want to get information that the SDK has
 
 }
 ```
+
+Subscribe to ```onConnected```. ```onConnected``` is called after the GOW server response with `dataReceived`: `true`. If there was no response from the GOW server, there was an error during the request to the server or the game is offline, `dataReceived` is `false`.
+
+> ```onConnected``` callback is supported since 2.0.32 version of SDK.
+
+```objective-c
+- (void)onConnected:(BOOL) dataReceived
+{
+}
+```	
+
 
 Call ```initialize``` method when you launch your app.
 
@@ -735,7 +799,6 @@ In order to check notifications implementation send [a test notification](http:/
 
 You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
 
->>In order to work with AI offers you should send at least 5 number-type properties and at least one progress based parameter.
 
 >If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
 
@@ -875,6 +938,38 @@ You can also receive the profile's group by using the special method:
 
 ```objc
    NSString * group = [GW GetUserGroup];
+```
+
+## A/B testing (experiments)
+
+> It's supported since version 2.0.29 of SDK for iOS.
+
+### Step 19
+
+In order to start working with experiments, it's needed to add some methods: 
+
+In order to confirm that the experiment payload settings have been applied and the player should take part in the experiment, it's needed to return  true:
+
+```objc   
+   - (BOOL) CanStartExperiment:(nonnull GWExperiment*) experiment
+     {
+	       //Read experiment.payload, apply changes for experiment and return True if changes were applied
+	  
+        return true;
+     }
+ ```
+
+
+In order to check if there is an experiment at the start of the application, subscribe to `onConnected` callback (see _Step 3_). If the experiment exists, `CanStartExperiment` will be called before `onConnected`.
+
+
+When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
+
+```objc 
+   - (void) OnExperimentEnded:(nonnull GWExperiment*) experiment
+   {
+	      //Disable experiment changes or keep them
+   }
 ```
 
 
