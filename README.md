@@ -4,9 +4,21 @@
 
 Download the latest sdk version from our server:
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.32/gameofwhales.zip)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-IOS/releases/download/v2.0.33/gameofwhales.zip)
 
 # Changelog
+
+### 2.0.33 (Dec 16, 2019)
+
+ADDED
+
+* The information about the player's device is sent to **Game of Whales** server. 
+
+FIXED
+
+* Minor fixes.
+
+
 
 ### 2.0.32 (Oct 22, 2019)
 
